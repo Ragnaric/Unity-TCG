@@ -1,0 +1,7 @@
+.DS_Store
+Assets/
+Library/
+Logs/
+Temp/
+ProjectSettings/
+UserSettings/
