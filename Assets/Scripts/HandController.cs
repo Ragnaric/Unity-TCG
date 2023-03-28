@@ -18,5 +18,8 @@ public class HandController : MonoBehaviour
 
     }
 
-    public void SetCardPositionsHand();
+    public void SetCardPositionsHand()
+    {
+
+    }
 }
