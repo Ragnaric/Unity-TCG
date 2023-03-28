@@ -5,6 +5,8 @@ using TMPro;
 
 public class Card : MonoBehaviour
 {
+    public CardScriptableObject cardSO;
+
     public int attackPower, currentHealth, manaCost;
 
     public TMP_Text attackText, defText, manaText;
