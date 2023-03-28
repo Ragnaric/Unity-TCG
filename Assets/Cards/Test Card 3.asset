@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8404c1970c44e9bb90d68ae7eafed4, type: 3}
+  m_Name: Test Card 3
+  m_EditorClassIdentifier: 
+  cardName: Inventive Name
+  descriptionText: An invention for testing purposes
+  flavorText: Genius can often be confused with madness
+  attackPower: 5
+  currentHealth: 4
+  manaCost: 5
+  characterSprite: {fileID: 21300000, guid: 047248d9510357d4d8037d05da0a33ce, type: 3}
+  bgSprite: {fileID: 21300000, guid: f3fbbee728f0f1c40ab1feb45e9f9fe3, type: 3}

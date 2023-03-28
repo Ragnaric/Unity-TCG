@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -9,13 +10,31 @@ public class Card : MonoBehaviour
 
     public int attackPower, currentHealth, manaCost;
 
-    public TMP_Text attackText, defText, manaText;
+    public TMP_Text attackText, defText, manaText, cardName, descriptionText, flavorText;
+
+    public Image characterArt, bgArt;
     // Start is called before the first frame update
     void Start()
     {
+        SetupCard();
+    }
+
+    public void SetupCard()
+    {
+        attackPower = cardSO.attackPower;
+        currentHealth = cardSO.currentHealth;
+        manaCost = cardSO.manaCost;
+
         attackText.text = attackPower.ToString();
         defText.text = currentHealth.ToString();
         manaText.text = manaCost.ToString();
+
+        cardName.text = cardSO.cardName;
+        descriptionText.text = cardSO.descriptionText;
+        flavorText.text = cardSO.flavorText;
+
+        characterArt.sprite = cardSO.characterSprite;
+        bgArt.sprite = cardSO.bgSprite;
     }
 
     // Update is called once per frame
