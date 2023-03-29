@@ -1276,11 +1276,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heldCards:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 589792677}
+  - {fileID: 1082935988}
+  - {fileID: 1122124444}
   minPos: {fileID: 1639920610}
   maxPos: {fileID: 443989894}
+  cardPositions: []
 --- !u!4 &280096274
 Transform:
   m_ObjectHideFlags: 0
@@ -1767,7 +1768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443989894}
   m_Layer: 0
-  m_Name: Maximum Position
+  m_Name: Max Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4713,7 +4714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639920610}
   m_Layer: 0
-  m_Name: Minimum Position
+  m_Name: Min Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
