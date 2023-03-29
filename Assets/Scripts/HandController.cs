@@ -28,11 +28,12 @@ public class HandController : MonoBehaviour
         if (heldCards.Count > 1)
         {
             distanceBetweenPoints = (maxPos.position - minPos.position) / (heldCards.Count - 1);
+            Debug.Log(distanceBetweenPoints);
         }
 
         for (int i = 0; i < heldCards.Count; i++)
         {
-            cardPositions.Add(minPos.position + (distanceBetweenPoints * i));
+            cardPositions.Add(minPos.position + (distanceBetweenPoints * i + Vector3.up * (i * 0.005f)));
             heldCards[i].transform.position = cardPositions[i];
         }
     }
