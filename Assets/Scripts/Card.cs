@@ -17,10 +17,16 @@ public class Card : MonoBehaviour
     private Vector3 targetPoint;
     public float moveSpeed = 5f;
 
+    public bool inHand;
+    public int handPosition;
+
+    private HandController theHC;
+
     // Start is called before the first frame update
     void Start()
     {
         SetupCard();
+        theHC = FindObjectOfType<HandController>();
     }
 
     public void SetupCard()
@@ -50,5 +56,13 @@ public class Card : MonoBehaviour
     public void MoveToPoint(Vector3 destinationPoint)
     {
         targetPoint = destinationPoint;
+    }
+
+    void OnMouseOver()
+    {
+        if (inHand)
+        {
+            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0f));
+        }
     }
 }
