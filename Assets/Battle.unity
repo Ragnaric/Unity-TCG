@@ -3447,6 +3447,8 @@ MonoBehaviour:
   characterArt: {fileID: 1262313468}
   bgArt: {fileID: 2135854616}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &392686706
 Transform:
   m_ObjectHideFlags: 0
@@ -4967,6 +4969,8 @@ MonoBehaviour:
   characterArt: {fileID: 56236417}
   bgArt: {fileID: 1394626355}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!65 &589792678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5023,6 +5027,8 @@ MonoBehaviour:
   characterArt: {fileID: 1220642033}
   bgArt: {fileID: 518066763}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &592610246
 Transform:
   m_ObjectHideFlags: 0
@@ -8032,14 +8038,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 6, z: -1.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &970439453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8641,6 +8647,8 @@ MonoBehaviour:
   characterArt: {fileID: 1160511722}
   bgArt: {fileID: 437606834}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1082935989
 Transform:
   m_ObjectHideFlags: 0
@@ -9154,6 +9162,8 @@ MonoBehaviour:
   characterArt: {fileID: 1297570955}
   bgArt: {fileID: 134055726}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1122124445
 Transform:
   m_ObjectHideFlags: 0
@@ -13945,6 +13955,8 @@ MonoBehaviour:
   characterArt: {fileID: 14910203}
   bgArt: {fileID: 799187815}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &1967607485
 Transform:
   m_ObjectHideFlags: 0
@@ -14950,6 +14962,8 @@ MonoBehaviour:
   characterArt: {fileID: 113525306}
   bgArt: {fileID: 870650372}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &2047915822
 Transform:
   m_ObjectHideFlags: 0
@@ -15022,6 +15036,8 @@ MonoBehaviour:
   characterArt: {fileID: 110454017}
   bgArt: {fileID: 164921814}
   moveSpeed: 5
+  inHand: 0
+  handPosition: 0
 --- !u!4 &2086138760
 Transform:
   m_ObjectHideFlags: 0

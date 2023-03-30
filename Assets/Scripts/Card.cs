@@ -62,7 +62,7 @@ public class Card : MonoBehaviour
     {
         if (inHand)
         {
-            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0f));
+            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f));
         }
     }
 
