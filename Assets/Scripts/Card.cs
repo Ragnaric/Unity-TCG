@@ -65,4 +65,12 @@ public class Card : MonoBehaviour
             MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0f));
         }
     }
+
+    void OnMouseExit()
+    {
+        if (inHand)
+        {
+            MoveToPoint(theHC.cardPositions[handPosition]);
+        }
+    }
 }
