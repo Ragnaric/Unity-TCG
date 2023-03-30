@@ -3414,6 +3414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392686706}
   - component: {fileID: 392686705}
+  - component: {fileID: 392686707}
   m_Layer: 0
   m_Name: Card 6
   m_TagString: Untagged
@@ -3445,6 +3446,7 @@ MonoBehaviour:
   flavorText: {fileID: 733492239}
   characterArt: {fileID: 1262313468}
   bgArt: {fileID: 2135854616}
+  moveSpeed: 5
 --- !u!4 &392686706
 Transform:
   m_ObjectHideFlags: 0
@@ -3461,6 +3463,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &392686707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392686704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &408944557
 GameObject:
   m_ObjectHideFlags: 0
@@ -4903,6 +4918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589792676}
   - component: {fileID: 589792677}
+  - component: {fileID: 589792678}
   m_Layer: 0
   m_Name: Card 1
   m_TagString: Untagged
@@ -4950,6 +4966,20 @@ MonoBehaviour:
   flavorText: {fileID: 474930833}
   characterArt: {fileID: 56236417}
   bgArt: {fileID: 1394626355}
+  moveSpeed: 5
+--- !u!65 &589792678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589792675}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &592610244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4960,6 +4990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592610246}
   - component: {fileID: 592610245}
+  - component: {fileID: 592610247}
   m_Layer: 0
   m_Name: Card 7
   m_TagString: Untagged
@@ -4991,6 +5022,7 @@ MonoBehaviour:
   flavorText: {fileID: 1993594931}
   characterArt: {fileID: 1220642033}
   bgArt: {fileID: 518066763}
+  moveSpeed: 5
 --- !u!4 &592610246
 Transform:
   m_ObjectHideFlags: 0
@@ -5007,6 +5039,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &592610247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592610244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &675746922
 GameObject:
   m_ObjectHideFlags: 0
@@ -8563,6 +8608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082935989}
   - component: {fileID: 1082935988}
+  - component: {fileID: 1082935990}
   m_Layer: 0
   m_Name: Card 2
   m_TagString: Untagged
@@ -8594,6 +8640,7 @@ MonoBehaviour:
   flavorText: {fileID: 1866467194}
   characterArt: {fileID: 1160511722}
   bgArt: {fileID: 437606834}
+  moveSpeed: 5
 --- !u!4 &1082935989
 Transform:
   m_ObjectHideFlags: 0
@@ -8610,6 +8657,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1082935990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082935987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1083485558
 GameObject:
   m_ObjectHideFlags: 0
@@ -9061,6 +9121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122124445}
   - component: {fileID: 1122124444}
+  - component: {fileID: 1122124446}
   m_Layer: 0
   m_Name: Card 3
   m_TagString: Untagged
@@ -9092,6 +9153,7 @@ MonoBehaviour:
   flavorText: {fileID: 1825013461}
   characterArt: {fileID: 1297570955}
   bgArt: {fileID: 134055726}
+  moveSpeed: 5
 --- !u!4 &1122124445
 Transform:
   m_ObjectHideFlags: 0
@@ -9108,6 +9170,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1122124446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122124443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1130051590
 GameObject:
   m_ObjectHideFlags: 0
@@ -13837,6 +13912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1967607485}
   - component: {fileID: 1967607484}
+  - component: {fileID: 1967607486}
   m_Layer: 0
   m_Name: Card 8
   m_TagString: Untagged
@@ -13868,6 +13944,7 @@ MonoBehaviour:
   flavorText: {fileID: 929935056}
   characterArt: {fileID: 14910203}
   bgArt: {fileID: 799187815}
+  moveSpeed: 5
 --- !u!4 &1967607485
 Transform:
   m_ObjectHideFlags: 0
@@ -13884,6 +13961,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1967607486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967607483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1980171908
 GameObject:
   m_ObjectHideFlags: 0
@@ -14827,6 +14917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047915822}
   - component: {fileID: 2047915821}
+  - component: {fileID: 2047915823}
   m_Layer: 0
   m_Name: Card 4
   m_TagString: Untagged
@@ -14858,6 +14949,7 @@ MonoBehaviour:
   flavorText: {fileID: 1837863697}
   characterArt: {fileID: 113525306}
   bgArt: {fileID: 870650372}
+  moveSpeed: 5
 --- !u!4 &2047915822
 Transform:
   m_ObjectHideFlags: 0
@@ -14874,6 +14966,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2047915823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047915820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2086138758
 GameObject:
   m_ObjectHideFlags: 0
@@ -14884,6 +14989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2086138760}
   - component: {fileID: 2086138759}
+  - component: {fileID: 2086138761}
   m_Layer: 0
   m_Name: Card 5
   m_TagString: Untagged
@@ -14915,6 +15021,7 @@ MonoBehaviour:
   flavorText: {fileID: 1932750512}
   characterArt: {fileID: 110454017}
   bgArt: {fileID: 164921814}
+  moveSpeed: 5
 --- !u!4 &2086138760
 Transform:
   m_ObjectHideFlags: 0
@@ -14931,6 +15038,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2086138761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086138758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.02, z: 1.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2135854615
 GameObject:
   m_ObjectHideFlags: 0
