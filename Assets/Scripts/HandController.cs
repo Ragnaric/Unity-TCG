@@ -33,7 +33,6 @@ public class HandController : MonoBehaviour
         for (int i = 0; i < heldCards.Count; i++)
         {
             cardPositions.Add(minPos.position + (distanceBetweenPoints * i + Vector3.up * (i * 0.005f)));
-            //heldCards[i].transform.position = cardPositions[i];
             heldCards[i].MoveToPoint(cardPositions[i]);
         }
     }
