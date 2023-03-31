@@ -63,7 +63,7 @@ public class Card : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100f, whatIsDesktop))
             {
-
+                MoveToPoint(hit.point + new Vector3(0f, 2f, 0f));
             }
         }
     }
