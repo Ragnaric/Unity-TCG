@@ -28,6 +28,7 @@ public class HandController : MonoBehaviour
         if (heldCards.Count > 1)
         {
             distanceBetweenPoints = (maxPos.position - minPos.position) / (heldCards.Count - 1);
+
         }
 
         for (int i = 0; i < heldCards.Count; i++)
@@ -36,6 +37,24 @@ public class HandController : MonoBehaviour
             heldCards[i].MoveToPoint(cardPositions[i]);
             heldCards[i].inHand = true;
             heldCards[i].handPosition = i;
+        }
+    }
+
+    void OnMouseEnter()
+    {
+        for (int i = 0; i < cardPositions.Count; i++)
+        {
+            cardPositions[i] += new Vector3(0f, 0f, 1f);
+            heldCards[i].MoveToPoint(cardPositions[i]);
+        }
+    }
+
+    void OnMouseExit()
+    {
+        for (int i = 0; i < cardPositions.Count; i++)
+        {
+            cardPositions[i] -= new Vector3(0f, 0f, 1f);
+            heldCards[i].MoveToPoint(cardPositions[i]);
         }
     }
 }

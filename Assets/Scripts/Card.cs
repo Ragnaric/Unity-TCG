@@ -73,7 +73,7 @@ public class Card : MonoBehaviour
         targetPoint = destinationPoint;
     }
 
-    void OnMouseEnter()
+    void OnMouseOver()
     {
         if (inHand)
         {
