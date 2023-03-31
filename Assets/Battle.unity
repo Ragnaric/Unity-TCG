@@ -3449,6 +3449,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &392686706
 Transform:
   m_ObjectHideFlags: 0
@@ -4971,6 +4974,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!65 &589792678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5029,6 +5035,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &592610246
 Transform:
   m_ObjectHideFlags: 0
@@ -5206,7 +5215,7 @@ GameObject:
   - component: {fileID: 707038560}
   - component: {fileID: 707038559}
   - component: {fileID: 707038558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Desktop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8649,6 +8658,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1082935989
 Transform:
   m_ObjectHideFlags: 0
@@ -9164,6 +9176,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1122124445
 Transform:
   m_ObjectHideFlags: 0
@@ -13957,6 +13972,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1967607485
 Transform:
   m_ObjectHideFlags: 0
@@ -14964,6 +14982,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &2047915822
 Transform:
   m_ObjectHideFlags: 0
@@ -15038,6 +15059,9 @@ MonoBehaviour:
   moveSpeed: 5
   inHand: 0
   handPosition: 0
+  whatIsDesktop:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &2086138760
 Transform:
   m_ObjectHideFlags: 0
