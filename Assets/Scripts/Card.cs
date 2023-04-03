@@ -74,28 +74,28 @@ public class Card : MonoBehaviour
         targetPoint = destinationPoint;
     }
 
-    // void OnMouseOver()
-    // {
-    //     if (inHand)
-    //     {
-    //         MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f));
-    //     }
-    // }
+    void OnMouseOver()
+    {
+        if (inHand)
+        {
+            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f));
+        }
+    }
 
-    // void OnMouseExit()
-    // {
-    //     if (inHand)
-    //     {
-    //         MoveToPoint(theHC.cardPositions[handPosition]);
-    //     }
-    // }
+    void OnMouseExit()
+    {
+        if (inHand)
+        {
+            MoveToPoint(theHC.cardPositions[handPosition]);
+        }
+    }
 
-    // void OnMouseDown()
-    // {
-    //     if (inHand)
-    //     {
-    //         isSelected = true;
-    //         theCol.enabled = false;
-    //     }
-    // }
+    void OnMouseDown()
+    {
+        if (inHand)
+        {
+            isSelected = true;
+            theCol.enabled = false;
+        }
+    }
 }

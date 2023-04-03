@@ -8,7 +8,7 @@ public class HandController : MonoBehaviour
     public Transform minPos, maxPos;
     public List<Vector3> cardPositions = new List<Vector3>();
 
-    public LayerMask handLayer;
+    public LayerMask desktopLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -47,19 +47,19 @@ public class HandController : MonoBehaviour
     //     theHC.transform.position = destination;
     // }
 
-    void OnMouseOver()
+    void OnMouseEnter()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100f, handLayer))
-        {
-            for (int i = 0; i < cardPositions.Count; i++)
+        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // RaycastHit hit;
+        // if (Physics.Raycast(ray, out hit, 100f, desktopLayer))
+        // {
+            for (int i = 0; i < heldCards.Count; i++)
             {
-                cardPositions[i] += new Vector3 (0f, 0f, 0.5f);
+                cardPositions[i] = cardPositions[i] + new Vector3 (0f, 0f, 1f);
                 heldCards[i].MoveToPoint(cardPositions[i]);
             }
             Debug.Log("hit hand layer");
-        }
+        //}
     }
 
     void OnMouseExit()

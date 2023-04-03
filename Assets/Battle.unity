@@ -2720,9 +2720,9 @@ MonoBehaviour:
   minPos: {fileID: 1639920610}
   maxPos: {fileID: 443989894}
   cardPositions: []
-  handLayer:
+  desktopLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!4 &280096274
 Transform:
   m_ObjectHideFlags: 0
@@ -2751,7 +2751,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 0.02, z: 2}
+  m_Size: {x: 8, y: 0.02, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &301917488
 GameObject:
