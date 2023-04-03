@@ -40,21 +40,28 @@ public class HandController : MonoBehaviour
         }
     }
 
-    void OnMouseEnter()
+    // public void MoveHandController(Vector3 destination)
+    // {
+    //     theHC.transform.position = destination;
+    // }
+
+    void OnMouseOver()
     {
-        for (int i = 0; i < cardPositions.Count; i++)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f, handLayer))
         {
-            cardPositions[i] += new Vector3(0f, 0f, 1f);
-            heldCards[i].MoveToPoint(cardPositions[i]);
+            for (int i = 0; i < cardPositions.Count; i++)
+            {
+                cardPositions[i] += new Vector3 (0f, 0f, 0.5f);
+                heldCards[i].MoveToPoint(cardPositions[i]);
+            }
+            Debug.Log("hit hand layer");
         }
     }
 
     void OnMouseExit()
     {
-        for (int i = 0; i < cardPositions.Count; i++)
-        {
-            cardPositions[i] -= new Vector3(0f, 0f, 1f);
-            heldCards[i].MoveToPoint(cardPositions[i]);
-        }
+        SetCardPositionsHand();
     }
 }
