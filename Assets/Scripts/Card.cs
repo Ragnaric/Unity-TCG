@@ -25,7 +25,7 @@ public class Card : MonoBehaviour
     private bool isSelected;
     private Collider theCol;
 
-    public LayerMask whatIsDesktop;
+    public LayerMask desktopLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -61,9 +61,9 @@ public class Card : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, whatIsDesktop))
+            if (Physics.Raycast(ray, out hit, 100f, desktopLayer))
             {
-                MoveToPoint(hit.point + new Vector3(0f, 2f, .5f));
+                MoveToPoint(hit.point + new Vector3(0f, 2f, 0.5f));
             }
         }
     }
@@ -77,7 +77,7 @@ public class Card : MonoBehaviour
     {
         if (inHand)
         {
-            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 1f, 0.5f));
+            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 2.5f, 3f));
         }
     }
 
