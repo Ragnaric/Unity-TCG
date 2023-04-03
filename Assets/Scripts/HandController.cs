@@ -8,6 +8,8 @@ public class HandController : MonoBehaviour
     public Transform minPos, maxPos;
     public List<Vector3> cardPositions = new List<Vector3>();
 
+    public LayerMask handLayer;
+
     // Start is called before the first frame update
     void Start()
     {
