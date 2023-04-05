@@ -76,14 +76,21 @@ public class Card : MonoBehaviour
 
     void OnMouseOver()
     {
-        float center = theHC.heldCards.Count / 2;
+        float center;
+        if (theHC.heldCards.Count % 2 == 0)
+        {
+            center = theHC.heldCards.Count / 2;
+        }
+        else
+        {
+            center = Mathf.Floor(theHC.heldCards.Count / 2);
+        }
         Vector3 currentPosition = theHC.cardPositions[handPosition];
         float shiftAxisX = currentPosition.x / center;
-        Debug.Log(shiftAxisX);
-            if (inHand)
-            {
-                MoveToPoint(currentPosition + new Vector3(-shiftAxisX, 2f, 2.5f));
-            }
+        if (inHand)
+        {
+            MoveToPoint(currentPosition + new Vector3(-shiftAxisX, 2f, 2.5f));
+        }
     }
 
     void OnMouseExit()
