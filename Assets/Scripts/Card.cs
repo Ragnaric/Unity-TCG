@@ -76,10 +76,14 @@ public class Card : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (inHand)
-        {
-            MoveToPoint(theHC.cardPositions[handPosition] + new Vector3(0f, 2f, 3f));
-        }
+        float center = theHC.heldCards.Count / 2;
+        Vector3 currentPosition = theHC.cardPositions[handPosition];
+        float shiftAxisX = currentPosition.x / center;
+        Debug.Log(shiftAxisX);
+            if (inHand)
+            {
+                MoveToPoint(currentPosition + new Vector3(-shiftAxisX, 2f, 2.5f));
+            }
     }
 
     void OnMouseExit()
