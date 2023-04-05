@@ -63,9 +63,14 @@ public class Card : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100f, desktopLayer))
+            Debug.Log(hit.point);
             {
                 MoveToPoint(hit.point + new Vector3(0f, 2f, 0.5f));
             }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            ReturnToHand();
         }
     }
 
@@ -108,5 +113,12 @@ public class Card : MonoBehaviour
             isSelected = true;
             theCol.enabled = false;
         }
+    }
+
+    public void ReturnToHand()
+    {
+        isSelected = false;
+        theCol.enabled = true;
+        MoveToPoint(theHC.cardPositions[handPosition]);
     }
 }
