@@ -61,25 +61,31 @@ public class Card : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit, 100f, desktopLayer))
             Debug.Log(hit.point);
             {
                 MoveToPoint(hit.point + new Vector3(0f, 2f, 0.5f));
             }
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            ReturnToHand();
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, placementLayer))
-            {
 
+            if (Input.GetMouseButtonDown(1))
+            {
+                ReturnToHand();
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (Physics.Raycast(ray, out hit, 100f, placementLayer))
+                {
+
+                }
+                else
+                {
+                    ReturnToHand();
+                }
             }
         }
+
     }
 
     public void MoveToPoint(Vector3 destinationPoint)
