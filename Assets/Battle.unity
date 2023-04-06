@@ -1216,7 +1216,7 @@ GameObject:
   - component: {fileID: 134473224}
   - component: {fileID: 134473225}
   - component: {fileID: 134473226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card_Frame (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5627,7 +5627,7 @@ GameObject:
   - component: {fileID: 736935666}
   - component: {fileID: 736935667}
   - component: {fileID: 736935668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card_Frame (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5725,7 +5725,7 @@ GameObject:
   - component: {fileID: 749118301}
   - component: {fileID: 749118302}
   - component: {fileID: 749118303}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card_Frame (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7029,7 +7029,7 @@ GameObject:
   - component: {fileID: 852055188}
   - component: {fileID: 852055189}
   - component: {fileID: 852055190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7127,7 +7127,7 @@ GameObject:
   - component: {fileID: 858989047}
   - component: {fileID: 858989048}
   - component: {fileID: 858989049}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card_Frame (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
