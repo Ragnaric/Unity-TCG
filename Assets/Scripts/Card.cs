@@ -28,6 +28,8 @@ public class Card : MonoBehaviour
 
     public LayerMask desktopLayer, handLayer, placementLayer;
 
+    public CardPlacePoint assignedPlace;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,7 +84,13 @@ public class Card : MonoBehaviour
 
                     if (selectedPoint.activeCard == null && selectedPoint.isPlayerPoint)
                     {
+                        selectedPoint.activeCard = this;
+                        assignedPlace = selectedPoint;
 
+                        MoveToPoint(selectedPoint.transform.position);
+
+                        inHand = false;
+                        isSelected = false;
                     }
                     else
                     {
