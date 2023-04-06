@@ -78,7 +78,16 @@ public class Card : MonoBehaviour
             {
                 if (Physics.Raycast(ray, out hit, 100f, placementLayer))
                 {
+                    CardPlacePoint selectedPoint = hit.collider.GetComponent<CardPlacePoint>();
 
+                    if (selectedPoint.activeCard == null && selectedPoint.isPlayerPoint)
+                    {
+
+                    }
+                    else
+                    {
+                        ReturnToHand();
+                    }
                 }
                 else
                 {
