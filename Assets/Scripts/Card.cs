@@ -23,6 +23,7 @@ public class Card : MonoBehaviour
     private HandController theHC;
 
     private bool isSelected;
+    private bool justPressed;
     private Collider theCol;
 
     public LayerMask desktopLayer, handLayer, placementLayer;
@@ -73,7 +74,7 @@ public class Card : MonoBehaviour
                 ReturnToHand();
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && justPressed == false)
             {
                 if (Physics.Raycast(ray, out hit, 100f, placementLayer))
                 {
@@ -85,7 +86,7 @@ public class Card : MonoBehaviour
                 }
             }
         }
-
+        justPressed = false;
     }
 
     public void MoveToPoint(Vector3 destinationPoint)
@@ -126,6 +127,7 @@ public class Card : MonoBehaviour
         {
             isSelected = true;
             theCol.enabled = false;
+            justPressed = true;
         }
     }
 
