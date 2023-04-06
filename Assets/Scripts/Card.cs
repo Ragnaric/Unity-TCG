@@ -25,8 +25,7 @@ public class Card : MonoBehaviour
     private bool isSelected;
     private Collider theCol;
 
-    public LayerMask desktopLayer;
-    public LayerMask handLayer;
+    public LayerMask desktopLayer, handLayer, placementLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +70,15 @@ public class Card : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             ReturnToHand();
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100f, placementLayer))
+            {
+
+            }
         }
     }
 

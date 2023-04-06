@@ -3766,6 +3766,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &392686706
 Transform:
   m_ObjectHideFlags: 0
@@ -5295,6 +5298,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!65 &589792678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5359,6 +5365,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &592610246
 Transform:
   m_ObjectHideFlags: 0
@@ -9214,6 +9223,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1082935989
 Transform:
   m_ObjectHideFlags: 0
@@ -9735,6 +9747,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1122124445
 Transform:
   m_ObjectHideFlags: 0
@@ -14760,6 +14775,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1967607485
 Transform:
   m_ObjectHideFlags: 0
@@ -15773,6 +15791,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &2047915822
 Transform:
   m_ObjectHideFlags: 0
@@ -15853,6 +15874,9 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 8
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &2086138760
 Transform:
   m_ObjectHideFlags: 0
