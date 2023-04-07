@@ -91,6 +91,7 @@ public class Card : MonoBehaviour
 
                         inHand = false;
                         isSelected = false;
+                        theHC.RemoveCardHand(this);
                     }
                     else
                     {

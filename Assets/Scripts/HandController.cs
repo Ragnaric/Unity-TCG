@@ -54,6 +54,7 @@ public class HandController : MonoBehaviour
         }
     }
 
+    //this feature not working as intended, will get back to it later
     public void RaiseHand()
     {
         cardPositions.Clear();
@@ -69,6 +70,17 @@ public class HandController : MonoBehaviour
         {
             cardPositions.Add(minPos.position + (distanceBetweenPoints * i + Vector3.up * (i * 0.005f)) + Vector3.forward);
             heldCards[i].MoveToPoint(cardPositions[i]);
+        }
+    }
+
+    public void RemoveCardHand(Card cardToRemove)
+    {
+        if (heldCards[cardToRemove.handPosition] == cardToRemove)
+        {
+            heldCards.RemoveAt(cardToRemove.handPosition);
+        } else
+        {
+            Debug.LogError("Card at position " + cardToRemove.handPosition + " is not the card being removed from hand");
         }
     }
 
