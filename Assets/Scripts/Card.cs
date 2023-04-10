@@ -20,7 +20,9 @@ public class Card : MonoBehaviour
     public bool inHand;
     public int handPosition;
 
+    //references to other objects/components
     private HandController theHC;
+    private BattleController theBC;
 
     private bool isSelected;
     private bool justPressed;
@@ -84,14 +86,20 @@ public class Card : MonoBehaviour
 
                     if (selectedPoint.activeCard == null && selectedPoint.isPlayerPoint)
                     {
-                        selectedPoint.activeCard = this;
-                        assignedPlace = selectedPoint;
+                        if (BattleController.instance.playerMana >= manaCost)
+                        {
+                            selectedPoint.activeCard = this;
+                            assignedPlace = selectedPoint;
 
-                        MoveToPoint(selectedPoint.transform.position);
+                            MoveToPoint(selectedPoint.transform.position);
 
-                        inHand = false;
-                        isSelected = false;
-                        theHC.RemoveCardHand(this);
+                            inHand = false;
+                            isSelected = false;
+                            theHC.RemoveCardHand(this);
+                        } else
+                        {
+                            ReturnToHand();
+                        }
                     }
                     else
                     {
