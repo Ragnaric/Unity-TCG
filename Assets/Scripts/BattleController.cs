@@ -25,4 +25,13 @@ public class BattleController : MonoBehaviour
     {
 
     }
+
+    public void spendMana(int amount)
+    {
+        playerMana = playerMana - amount;
+
+        if (playerMana < 0) {
+            playerMana = 0;
+        }
+    }
 }

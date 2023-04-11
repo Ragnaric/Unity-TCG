@@ -96,6 +96,7 @@ public class Card : MonoBehaviour
                             inHand = false;
                             isSelected = false;
                             theHC.RemoveCardHand(this);
+                            BattleController.instance.spendMana(manaCost);
                         } else
                         {
                             ReturnToHand();
