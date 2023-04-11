@@ -14,6 +14,8 @@ public class UIController : MonoBehaviour
 
     public TMP_Text playerManaText;
 
+    public GameObject manaWarning;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,10 @@ public class UIController : MonoBehaviour
     public void SetPlayerManaText(int amount)
     {
         playerManaText.text = "Mana: " + amount;
+    }
+
+    public void ShowManaWarning()
+    {
+        manaWarning.SetActive(true);
     }
 }

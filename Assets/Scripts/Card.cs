@@ -99,6 +99,7 @@ public class Card : MonoBehaviour
                             BattleController.instance.spendMana(manaCost);
                         } else
                         {
+                            UIController.instance.ShowManaWarning();
                             ReturnToHand();
                         }
                     }
