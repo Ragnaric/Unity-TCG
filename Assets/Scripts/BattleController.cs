@@ -18,6 +18,7 @@ public class BattleController : MonoBehaviour
     void Start()
     {
         playerMana = initialMana;
+        UIController.instance.SetPlayerManaText(playerMana);
     }
 
     // Update is called once per frame
@@ -33,5 +34,7 @@ public class BattleController : MonoBehaviour
         if (playerMana < 0) {
             playerMana = 0;
         }
+
+        UIController.instance.SetPlayerManaText(playerMana);
     }
 }
