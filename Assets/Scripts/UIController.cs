@@ -6,6 +6,8 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     public static UIController instance;
+    public float manaWarningTime;
+    private float manaWarningCounter;
 
     private void Awake()
     {
@@ -25,7 +27,14 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (manaWarningCounter > 0)
+        {
+            manaWarningCounter -= Time.deltaTime;
+        }
+        if (manaWarningCounter <= 0)
+        {
+            manaWarning.SetActive(false);
+        }
     }
 
     public void SetPlayerManaText(int amount)
@@ -36,5 +45,6 @@ public class UIController : MonoBehaviour
     public void ShowManaWarning()
     {
         manaWarning.SetActive(true);
+        manaWarningCounter = manaWarningTime;
     }
 }

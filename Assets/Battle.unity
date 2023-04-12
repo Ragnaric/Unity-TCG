@@ -10334,6 +10334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707cebd4ef26d4c3f875f38462f09deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaWarningTime: 2
   playerManaText: {fileID: 1656830546}
   manaWarning: {fileID: 560725055}
 --- !u!1 &1194315601
