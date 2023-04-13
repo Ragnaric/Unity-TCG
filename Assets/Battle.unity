@@ -5701,6 +5701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e46ba360105f4f4f8cb894a2e9a8d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
 --- !u!4 &705212154
 Transform:
   m_ObjectHideFlags: 0

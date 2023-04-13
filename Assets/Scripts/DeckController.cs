@@ -27,6 +27,14 @@ public class DeckController : MonoBehaviour
 
     public void SetupDeck()
     {
-
+        activeCards.Clear();
+        List<CardScriptableObject> tempDeck = new List<CardScriptableObject>();
+        tempDeck.AddRange(deck);
+        while (tempDeck.Count > 0)
+        {
+            int selected = Random.Range(0, tempDeck.Count);
+            activeCards.Add(tempDeck[selected]);
+            tempDeck.RemoveAt(selected);
+        }
     }
 }
