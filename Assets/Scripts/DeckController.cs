@@ -53,5 +53,6 @@ public class DeckController : MonoBehaviour
         newCard.cardSO = activeCards[0];
         newCard.SetupCard();
         activeCards.RemoveAt(0);
+        HandController.instance.AddCardHand(newCard);
     }
 }

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
+    public static HandController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public List<Card> heldCards = new List<Card>();
     public Transform minPos, maxPos;
     public List<Vector3> cardPositions = new List<Vector3>();
@@ -82,6 +89,12 @@ public class HandController : MonoBehaviour
         {
             Debug.LogError("Card at position " + cardToRemove.handPosition + " is not the card being removed from hand");
         }
+        SetCardPositionsHand();
+    }
+
+    public void AddCardHand(Card cardToAdd)
+    {
+        heldCards.Add(cardToAdd);
         SetCardPositionsHand();
     }
 
