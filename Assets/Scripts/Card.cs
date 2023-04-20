@@ -120,6 +120,12 @@ public class Card : MonoBehaviour
     public void MoveToPoint(Vector3 destinationPoint)
     {
         targetPoint = destinationPoint;
+        //transform.Rotate(0f, 0f, 180f, Space.World);
+    }
+
+    public void FlipCard()
+    {
+
     }
 
     void OnMouseOver()
