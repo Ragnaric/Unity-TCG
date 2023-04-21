@@ -55,7 +55,8 @@ public class HandController : MonoBehaviour
         for (int i = 0; i < heldCards.Count; i++)
         {
             cardPositions.Add(minPos.position + (distanceBetweenPoints * i + Vector3.up * (i * 0.005f)));
-            heldCards[i].FlipCard();
+            //This line of code will flip cards in hand also
+            //heldCards[i].FlipCard();
             heldCards[i].MoveToPoint(cardPositions[i]);
             heldCards[i].inHand = true;
             heldCards[i].handPosition = i;

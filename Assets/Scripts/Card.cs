@@ -130,13 +130,7 @@ public class Card : MonoBehaviour
 
     public /*IEnumerator*/ void FlipCard()
     {
-        // Quaternion targetRotation = Quaternion.identity;
-        // Debug.Log(targetRotation);
-        // float rotateSpeed = 45;
-        // float angle = rotateSpeed * Time.deltaTime;
-        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-        // //transform.rotation *= Quaternion.AngleAxis(angle, Vector3.up);
-
+        //yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < 180; i++)
         {
             //yield return new WaitForSeconds(0.1f);
