@@ -120,12 +120,28 @@ public class Card : MonoBehaviour
     public void MoveToPoint(Vector3 destinationPoint)
     {
         targetPoint = destinationPoint;
-        //transform.Rotate(0f, 0f, 180f, Space.World);
+
     }
 
-    public void FlipCard()
-    {
+    // public void StartFlip()
+    // {
+    //     StartCoroutine(FlipCard());
+    // }
 
+    public /*IEnumerator*/ void FlipCard()
+    {
+        // Quaternion targetRotation = Quaternion.identity;
+        // Debug.Log(targetRotation);
+        // float rotateSpeed = 45;
+        // float angle = rotateSpeed * Time.deltaTime;
+        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        // //transform.rotation *= Quaternion.AngleAxis(angle, Vector3.up);
+
+        for (int i = 0; i < 180; i++)
+        {
+            //yield return new WaitForSeconds(0.1f);
+            transform.Rotate(new Vector3 (0f, 0f, 1f));
+        }
     }
 
     void OnMouseOver()

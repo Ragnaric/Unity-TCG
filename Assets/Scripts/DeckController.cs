@@ -49,8 +49,8 @@ public class DeckController : MonoBehaviour
         {
             SetupDeck();
         }
-        Debug.Log(transform.rotation);
         Card newCard = Instantiate(cardSpawn, transform.position, transform.rotation);
+        //newCard.FlipCard();
         newCard.cardSO = activeCards[0];
         newCard.SetupCard();
         activeCards.RemoveAt(0);
