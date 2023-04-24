@@ -137,10 +137,10 @@ public class Card : MonoBehaviour
     public IEnumerator FlipCard()
     {
         Debug.Log("Flipping card");
-        for (int i = 0; i < 180; i++)
+        for (int i = 0; i < 90; i++)
         {
             yield return new WaitForSeconds(0.001f);
-            transform.Rotate(new Vector3 (0f, 0f, 1f));
+            transform.Rotate(new Vector3 (0f, 0f, 2f));
         }
     }
 
