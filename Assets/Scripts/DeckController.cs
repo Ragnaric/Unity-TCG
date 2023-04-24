@@ -50,6 +50,7 @@ public class DeckController : MonoBehaviour
             SetupDeck();
         }
         Card newCard = Instantiate(cardSpawn, transform.position, transform.rotation);
+        newCard.StartFlip();
         newCard.FlipCard();
         newCard.cardSO = activeCards[0];
         newCard.SetupCard();

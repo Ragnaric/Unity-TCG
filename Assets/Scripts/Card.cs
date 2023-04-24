@@ -116,10 +116,10 @@ public class Card : MonoBehaviour
         }
         justPressed = false;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartFlip();
-        }
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     StartFlip();
+        // }
     }
 
     public void MoveToPoint(Vector3 destinationPoint)
