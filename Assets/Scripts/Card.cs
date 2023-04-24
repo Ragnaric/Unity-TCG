@@ -115,6 +115,11 @@ public class Card : MonoBehaviour
             }
         }
         justPressed = false;
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StartFlip();
+        }
     }
 
     public void MoveToPoint(Vector3 destinationPoint)
@@ -123,17 +128,18 @@ public class Card : MonoBehaviour
 
     }
 
-    // public void StartFlip()
-    // {
-    //     StartCoroutine(FlipCard());
-    // }
-
-    public /*IEnumerator*/ void FlipCard()
+    public void StartFlip()
     {
-        //yield return new WaitForSeconds(0.5f);
+        StartCoroutine(FlipCard());
+        Debug.Log("Coroutine started");
+    }
+
+    public IEnumerator FlipCard()
+    {
+        Debug.Log("Flipping card");
         for (int i = 0; i < 180; i++)
         {
-            //yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
             transform.Rotate(new Vector3 (0f, 0f, 1f));
         }
     }
