@@ -139,7 +139,7 @@ public class Card : MonoBehaviour
         Debug.Log("Flipping card");
         for (int i = 0; i < 180; i++)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.001f);
             transform.Rotate(new Vector3 (0f, 0f, 1f));
         }
     }
