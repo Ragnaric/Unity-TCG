@@ -47,4 +47,9 @@ public class UIController : MonoBehaviour
         manaWarning.SetActive(true);
         manaWarningCounter = manaWarningTime;
     }
+
+    public void DrawCard()
+    {
+        Debug.Log("Drawing a card");
+    }
 }
