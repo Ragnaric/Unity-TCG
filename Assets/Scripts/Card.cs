@@ -131,12 +131,10 @@ public class Card : MonoBehaviour
     public void StartFlip()
     {
         StartCoroutine(FlipCard());
-        Debug.Log("Coroutine started");
     }
 
     public IEnumerator FlipCard()
     {
-        Debug.Log("Flipping card");
         for (int i = 0; i < 90; i++)
         {
             yield return new WaitForSeconds(0.001f);

@@ -50,6 +50,6 @@ public class UIController : MonoBehaviour
 
     public void DrawCard()
     {
-        Debug.Log("Drawing a card");
+        DeckController.instance.DrawCardForMana();
     }
 }

@@ -15,6 +15,8 @@ public class DeckController : MonoBehaviour
     private List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
 
     public Card cardSpawn;
+
+    public int drawCardCost = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,5 +58,17 @@ public class DeckController : MonoBehaviour
         newCard.SetupCard();
         activeCards.RemoveAt(0);
         HandController.instance.AddCardHand(newCard);
+    }
+
+    public void DrawCardForMana()
+    {
+        if (BattleController.instance.playerMana >= drawCardCost)
+        {
+            DrawCard();
+        }
+        else
+        {
+            UIController.instance.ShowManaWarning();
+        }
     }
 }
