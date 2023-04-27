@@ -65,6 +65,7 @@ public class DeckController : MonoBehaviour
         if (BattleController.instance.playerMana >= drawCardCost)
         {
             DrawCard();
+            BattleController.instance.spendMana(drawCardCost);
         }
         else
         {
