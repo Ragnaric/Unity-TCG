@@ -26,10 +26,10 @@ public class DeckController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DrawCard();
-        }
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     DrawCard();
+        // }
     }
 
     public void SetupDeck()
