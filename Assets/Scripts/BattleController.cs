@@ -11,7 +11,7 @@ public class BattleController : MonoBehaviour
         instance = this;
     }
 
-    public int initialMana = 2, maxMana = 12;
+    public int initialMana, maxMana = 12;
     public int playerMana;
 
     // Start is called before the first frame update

@@ -657,18 +657,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &255554994 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2799276699775070391, guid: a29408744a6de4b85b875131cddbdcc0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2101357872}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5092f3a2c5d04f81b9b78318bf7a02d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &280096272
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,8 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2c2fa7284ed4cb781119685d08557b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldCards:
-  - {fileID: 255554994}
+  heldCards: []
   minPos: {fileID: 1639920610}
   maxPos: {fileID: 443989894}
   cardPositions: []

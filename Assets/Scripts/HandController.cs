@@ -44,17 +44,20 @@ public class HandController : MonoBehaviour
     public void SetCardPositionsHand()
     {
         cardPositions.Clear();
+        Vector3 center = new Vector3((maxPos.position.x + minPos.position.x), maxPos.position.y, maxPos.position.z);
+        //Debug.Log(center);
 
-        Vector3 distanceBetweenPoints = Vector3.zero;
+        Vector3 distanceBetweenCards = Vector3.zero;
+        //distanceBetweenPoints = center;
         if (heldCards.Count > 1)
         {
-            distanceBetweenPoints = (maxPos.position - minPos.position) / (heldCards.Count - 1);
-
+            distanceBetweenCards = new Vector3(1f, 0f, 0f);
         }
+        Debug.Log(distanceBetweenCards);
 
         for (int i = 0; i < heldCards.Count; i++)
         {
-            cardPositions.Add(minPos.position + (distanceBetweenPoints * i + Vector3.up * (i * 0.005f)));
+            cardPositions.Add(center + (distanceBetweenCards * i + Vector3.up * (i * 0.005f)));
             //This line of code will flip cards in hand also
             //heldCards[i].FlipCard();
             heldCards[i].MoveToPoint(cardPositions[i]);
@@ -68,16 +71,16 @@ public class HandController : MonoBehaviour
     {
         cardPositions.Clear();
 
-        Vector3 distanceBetweenPoints = Vector3.zero;
+        Vector3 distanceBetweenCards = Vector3.zero;
         if (heldCards.Count > 1)
         {
-            distanceBetweenPoints = (maxPos.position - minPos.position) / (heldCards.Count - 1);
+            distanceBetweenCards = (maxPos.position - minPos.position) / (heldCards.Count - 1);
 
         }
 
         for (int i = 0; i < heldCards.Count; i++)
         {
-            cardPositions.Add(minPos.position + (distanceBetweenPoints * i + Vector3.up * (i * 0.005f)) + Vector3.forward);
+            cardPositions.Add(minPos.position + (distanceBetweenCards * i + Vector3.up * (i * 0.005f)) + Vector3.forward);
             heldCards[i].MoveToPoint(cardPositions[i]);
         }
     }
