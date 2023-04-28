@@ -46,14 +46,25 @@ public class HandController : MonoBehaviour
         cardPositions.Clear();
         Vector3 center = new Vector3((maxPos.position.x + minPos.position.x), maxPos.position.y, maxPos.position.z);
 
-        Vector3 shiftDistance = Vector3.left;
+        Vector3 shiftDistance = Vector3.left * 0.75f;
         for (int i = 0; i < heldCards.Count; i++)
         {
-            float middleCard = Mathf.Floor(heldCards.Count / 2);
-            cardPositions.Add(center + (shiftDistance * (middleCard - i) + Vector3.up * (i * 0.005f)));
-            heldCards[i].MoveToPoint(cardPositions[i]);
-            heldCards[i].inHand = true;
-            heldCards[i].handPosition = i;
+            if (heldCards.Count % 2 == 0)
+            {
+                float middlePoint = (heldCards.Count / 2) - 0.5f;
+                cardPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
+                heldCards[i].MoveToPoint(cardPositions[i]);
+                heldCards[i].inHand = true;
+                heldCards[i].handPosition = i;
+            }
+            else
+            {
+                float middlePoint = heldCards.Count / 2;
+                cardPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
+                heldCards[i].MoveToPoint(cardPositions[i]);
+                heldCards[i].inHand = true;
+                heldCards[i].handPosition = i;
+            }
         }
     }
 
