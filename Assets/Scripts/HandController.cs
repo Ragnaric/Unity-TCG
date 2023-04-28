@@ -45,21 +45,12 @@ public class HandController : MonoBehaviour
     {
         cardPositions.Clear();
         Vector3 center = new Vector3((maxPos.position.x + minPos.position.x), maxPos.position.y, maxPos.position.z);
-        //Debug.Log(center);
 
-        Vector3 distanceBetweenCards = Vector3.zero;
-        //distanceBetweenPoints = center;
-        if (heldCards.Count > 1)
-        {
-            distanceBetweenCards = new Vector3(1f, 0f, 0f);
-        }
-        Debug.Log(distanceBetweenCards);
-
+        Vector3 shiftDistance = Vector3.left;
         for (int i = 0; i < heldCards.Count; i++)
         {
-            cardPositions.Add(center + (distanceBetweenCards * i + Vector3.up * (i * 0.005f)));
-            //This line of code will flip cards in hand also
-            //heldCards[i].FlipCard();
+            float middleCard = Mathf.Floor(heldCards.Count / 2);
+            cardPositions.Add(center + (shiftDistance * (middleCard - i) + Vector3.up * (i * 0.005f)));
             heldCards[i].MoveToPoint(cardPositions[i]);
             heldCards[i].inHand = true;
             heldCards[i].handPosition = i;

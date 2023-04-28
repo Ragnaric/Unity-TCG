@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d26f4652d0db4436b1fcb271297f483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialMana: 2
+  initialMana: 12
   maxMana: 12
   playerMana: 0
 --- !u!4 &986793651
