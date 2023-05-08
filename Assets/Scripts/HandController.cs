@@ -123,4 +123,9 @@ public class HandController : MonoBehaviour
     // {
     //     SetCardPositionsHand();
     // }
+
+    public void FirstDraw()
+    {
+
+    }
 }
