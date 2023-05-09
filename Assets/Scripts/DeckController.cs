@@ -72,4 +72,13 @@ public class DeckController : MonoBehaviour
             UIController.instance.ShowManaWarning();
         }
     }
+
+    public void FirstDraw(int amount)
+    {
+        while (amount != 0)
+        {
+            DrawCard();
+            amount--;
+        }
+    }
 }
