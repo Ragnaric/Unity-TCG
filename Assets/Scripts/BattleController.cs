@@ -21,7 +21,7 @@ public class BattleController : MonoBehaviour
     {
         playerMana = initialMana;
         UIController.instance.SetPlayerManaText(playerMana);
-        DeckController.instance.FirstDraw(startingCards);
+        DeckController.instance.StartFirstDraw(startingCards);
     }
 
     // Update is called once per frame

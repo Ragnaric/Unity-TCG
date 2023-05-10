@@ -73,12 +73,18 @@ public class DeckController : MonoBehaviour
         }
     }
 
-    public void FirstDraw(int amount)
+    public void StartFirstDraw(int amount)
+    {
+        StartCoroutine(FirstDraw(amount));
+    }
+
+    IEnumerator FirstDraw(int amount)
     {
         while (amount != 0)
         {
             DrawCard();
             amount--;
+            yield return new WaitForSeconds(0.25f);
         }
     }
 }
