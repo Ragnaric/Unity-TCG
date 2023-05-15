@@ -78,7 +78,7 @@ public class Card : MonoBehaviour
                 ReturnToHand();
             }
 
-            if (Input.GetMouseButtonDown(0) && justPressed == false)
+            if (Input.GetMouseButtonDown(0) && justPressed == false && BattleController.instance.currentPhase == BattleController.TurnOrder.playerMainPhase)
             {
                 if (Physics.Raycast(ray, out hit, 100f, placementLayer))
                 {
@@ -171,7 +171,7 @@ public class Card : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (inHand)
+        if (inHand && BattleController.instance.currentPhase == BattleController.TurnOrder.playerMainPhase)
         {
             isSelected = true;
             theCol.enabled = false;
