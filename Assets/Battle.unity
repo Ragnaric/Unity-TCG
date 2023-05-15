@@ -1615,7 +1615,7 @@ GameObject:
   - component: {fileID: 887053544}
   - component: {fileID: 887053543}
   m_Layer: 0
-  m_Name: Draw Button
+  m_Name: End Turn Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1887,6 +1887,8 @@ MonoBehaviour:
   initialMana: 12
   maxMana: 12
   playerMana: 0
+  startingCards: 5
+  currentPhase: 0
 --- !u!4 &986793651
 Transform:
   m_ObjectHideFlags: 0
@@ -2373,7 +2375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Draw Card
+  m_text: End Turn
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
