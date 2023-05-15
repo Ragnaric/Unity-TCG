@@ -49,6 +49,11 @@ public class BattleController : MonoBehaviour
     {
         currentPhase++;
 
+        if ((int)currentPhase >= System.Enum.GetValues(typeof(TurnOrder)).Length)
+        {
+            currentPhase = 0;
+        }
+
         switch(currentPhase)
         {
             case TurnOrder.playerMainPhase:
