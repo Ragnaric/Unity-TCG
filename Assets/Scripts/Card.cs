@@ -78,9 +78,9 @@ public class Card : MonoBehaviour
                 ReturnToHand();
             }
 
-            if (Input.GetMouseButtonDown(0) && justPressed == false && BattleController.instance.currentPhase == BattleController.TurnOrder.playerMainPhase)
+            if (Input.GetMouseButtonDown(0) && justPressed == false)
             {
-                if (Physics.Raycast(ray, out hit, 100f, placementLayer))
+                if (Physics.Raycast(ray, out hit, 100f, placementLayer) && BattleController.instance.currentPhase == BattleController.TurnOrder.playerMainPhase)
                 {
                     CardPlacePoint selectedPoint = hit.collider.GetComponent<CardPlacePoint>();
 
