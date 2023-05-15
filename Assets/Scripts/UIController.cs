@@ -48,9 +48,9 @@ public class UIController : MonoBehaviour
         manaWarningCounter = manaWarningTime;
     }
 
-    public void DrawCard()
+    public void EndPhase()
     {
-        DeckController.instance.DrawCardForMana();
+        //DeckController.instance.DrawCardForMana();
         BattleController.instance.AdvanceTurn();
     }
 }
