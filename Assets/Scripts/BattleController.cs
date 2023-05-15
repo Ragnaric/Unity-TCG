@@ -16,6 +16,9 @@ public class BattleController : MonoBehaviour
 
     public int startingCards = 5;
 
+    public enum TurnOrder { playerMainPhase, playerAttackPhase, enemyMainPhase, enemyAttackPhase }
+    public TurnOrder currentPhase;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +37,35 @@ public class BattleController : MonoBehaviour
     {
         playerMana = playerMana - amount;
 
-        if (playerMana < 0) {
+        if (playerMana < 0)
+        {
             playerMana = 0;
         }
 
         UIController.instance.SetPlayerManaText(playerMana);
+    }
+
+    public void AdvanceTurn()
+    {
+        currentPhase++;
+
+        switch(currentPhase)
+        {
+            case TurnOrder.playerMainPhase:
+                Debug.Log(currentPhase);
+                break;
+
+            case TurnOrder.playerAttackPhase:
+                Debug.Log(currentPhase);
+                break;
+
+            case TurnOrder.enemyMainPhase:
+                Debug.Log(currentPhase);
+                break;
+
+            case TurnOrder.enemyAttackPhase:
+                Debug.Log(currentPhase);
+                break;
+        }
     }
 }

@@ -51,5 +51,6 @@ public class UIController : MonoBehaviour
     public void DrawCard()
     {
         DeckController.instance.DrawCardForMana();
+        BattleController.instance.AdvanceTurn();
     }
 }
