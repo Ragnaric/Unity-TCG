@@ -54,6 +54,20 @@ public class BattleController : MonoBehaviour
         UIController.instance.SetTurnText(turn);
     }
 
+    public void updateMana()
+    {
+        if (initialMana + (turn - 1) < maxMana)
+        {
+            playerMana = initialMana + (turn - 1);
+            UIController.instance.SetPlayerManaText(playerMana);
+        }
+        else
+        {
+            playerMana = maxMana;
+            UIController.instance.SetPlayerManaText(playerMana);
+        }
+    }
+
     public void AdvanceTurn()
     {
         currentPhase++;
@@ -68,7 +82,7 @@ public class BattleController : MonoBehaviour
             case TurnOrder.playerMainPhase:
                 Debug.Log(currentPhase);
                 updateTurn();
-                Debug.Log(turn);
+                updateMana();
                 DeckController.instance.DrawCard();
                 break;
 
