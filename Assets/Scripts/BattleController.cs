@@ -58,6 +58,7 @@ public class BattleController : MonoBehaviour
         {
             case TurnOrder.playerMainPhase:
                 Debug.Log(currentPhase);
+                DeckController.instance.DrawCard();
                 break;
 
             case TurnOrder.playerAttackPhase:

@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
 
     public TMP_Text playerManaText;
 
-    public GameObject manaWarning;
+    public GameObject manaWarning, endTurnButton;
 
     // Start is called before the first frame update
     void Start()
