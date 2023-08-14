@@ -11,8 +11,10 @@ public class BattleController : MonoBehaviour
         instance = this;
     }
 
-    public int initialMana, maxMana = 12;
+    public int initialMana = 3;
+    public int maxMana = 12;
     public int playerMana;
+    public int turn = 1;
 
     public int startingCards = 5;
 
@@ -24,6 +26,7 @@ public class BattleController : MonoBehaviour
     {
         playerMana = initialMana;
         UIController.instance.SetPlayerManaText(playerMana);
+        UIController.instance.SetTurnText(turn);
         DeckController.instance.StartFirstDraw(startingCards);
     }
 
@@ -58,6 +61,8 @@ public class BattleController : MonoBehaviour
         {
             case TurnOrder.playerMainPhase:
                 Debug.Log(currentPhase);
+                turn++;
+                Debug.Log(turn);
                 DeckController.instance.DrawCard();
                 break;
 

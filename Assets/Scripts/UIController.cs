@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     }
 
     public TMP_Text playerManaText;
+    public TMP_Text turnNumber;
 
     public GameObject manaWarning, endTurnButton;
 
@@ -40,6 +41,11 @@ public class UIController : MonoBehaviour
     public void SetPlayerManaText(int amount)
     {
         playerManaText.text = "Mana: " + amount;
+    }
+
+    public void SetTurnText(int amount)
+    {
+        turnNumber.text = "Turn: " + amount;
     }
 
     public void ShowManaWarning()
