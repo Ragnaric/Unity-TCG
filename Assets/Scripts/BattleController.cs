@@ -11,8 +11,7 @@ public class BattleController : MonoBehaviour
         instance = this;
     }
 
-    public int initialMana = 3;
-    public int maxMana = 12;
+    public int initialMana = 3, maxMana = 12;
     public int playerMana;
     public int turn = 1;
 
@@ -24,9 +23,8 @@ public class BattleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMana = initialMana;
-        UIController.instance.SetPlayerManaText(playerMana);
         UIController.instance.SetTurnText(turn);
+        updateMana();
         DeckController.instance.StartFirstDraw(startingCards);
     }
 
