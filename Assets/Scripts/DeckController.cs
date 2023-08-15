@@ -84,7 +84,7 @@ public class DeckController : MonoBehaviour
         {
             DrawCard();
             amount--;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(.3f);
         }
     }
 }

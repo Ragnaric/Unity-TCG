@@ -15,7 +15,7 @@ public class Card : MonoBehaviour
     public Image characterArt, bgArt;
 
     private Vector3 targetPoint;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
 
     public bool inHand;
     public int handPosition;
@@ -35,6 +35,11 @@ public class Card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (targetPoint == Vector3.zero)
+        {
+            targetPoint = transform.position;
+        }
+
         SetupCard();
         theHC = FindObjectOfType<HandController>();
         theCol = GetComponent<Collider>();
