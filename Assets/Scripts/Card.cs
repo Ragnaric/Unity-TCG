@@ -8,6 +8,8 @@ public class Card : MonoBehaviour
 {
     public CardScriptableObject cardSO;
 
+    public bool isPlayer;
+
     public int attackPower, currentHealth, manaCost;
 
     public TMP_Text attackText, defText, manaText, cardName, descriptionText, flavorText;
@@ -160,7 +162,7 @@ public class Card : MonoBehaviour
         }
         Vector3 currentPosition = theHC.cardPositions[handPosition];
         float shiftAxisX = currentPosition.x / center;
-        if (inHand)
+        if (inHand && isPlayer)
         {
             MoveToPoint(currentPosition + new Vector3(-shiftAxisX, 2f, 2.5f));
         }
@@ -168,7 +170,7 @@ public class Card : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (inHand)
+        if (inHand && isPlayer)
         {
             MoveToPoint(theHC.cardPositions[handPosition]);
         }
