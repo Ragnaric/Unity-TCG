@@ -12,6 +12,8 @@ public class CardPointsController : MonoBehaviour
     }
 
     public CardPlacePoint[] playerCardPoints, enemyCardPoints;
+    public float attackDelay = 0.25f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,15 @@ public class CardPointsController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void PlayerAttack()
+    {
+        StartCoroutine(attackCoroutine());
+    }
+
+    IEnumerator attackCoroutine()
+    {
+        yield return new WaitForSeconds(attackDelay);
     }
 }
