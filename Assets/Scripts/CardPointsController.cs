@@ -11,7 +11,7 @@ public class CardPointsController : MonoBehaviour
         instance = this;
     }
 
-    public CardPlacePoint[] playerCardPoints, enemyCardPoints;
+    public CardPlacePoint[] playerCardPoints, opponentCardPoints;
     public float attackDelay = 0.5f;
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class CardPointsController : MonoBehaviour
         {
             if (playerCardPoints[i].activeCard != null)
             {
-                if (enemyCardPoints[i].activeCard != null)
+                if (opponentCardPoints[i].activeCard != null)
                 {
                     Debug.Log("Attack " + i);
                     //attack enemy card

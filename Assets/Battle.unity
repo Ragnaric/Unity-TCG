@@ -934,8 +934,25 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
+        type: 3}
+      propertyPath: assignedPlace
+      value: 
+      objectReference: {fileID: 1398725856}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6501071031534e67adaa60c2694a7d5, type: 3}
+--- !u!114 &470941243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 470941242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5092f3a2c5d04f81b9b78318bf7a02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &560725055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b6b7e91d32542dba7e7b5ac208b74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCard: {fileID: 0}
+  activeCard: {fileID: 1620370652}
   isPlayerPoint: 0
 --- !u!65 &1059411553
 BoxCollider:
@@ -2326,7 +2343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b6b7e91d32542dba7e7b5ac208b74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCard: {fileID: 0}
+  activeCard: {fileID: 8943724233666869648}
   isPlayerPoint: 0
 --- !u!65 &1194315604
 BoxCollider:
@@ -2428,12 +2445,13 @@ MonoBehaviour:
   - {fileID: 852055191}
   - {fileID: 736935669}
   - {fileID: 134473227}
-  enemyCardPoints:
+  opponentCardPoints:
   - {fileID: 29026226}
   - {fileID: 1398725856}
   - {fileID: 1194315603}
   - {fileID: 1059411552}
   - {fileID: 42600340}
+  attackDelay: 0.25
 --- !u!4 &1214933100
 Transform:
   m_ObjectHideFlags: 0
@@ -2632,7 +2650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b6b7e91d32542dba7e7b5ac208b74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCard: {fileID: 0}
+  activeCard: {fileID: 470941243}
   isPlayerPoint: 0
 --- !u!65 &1398725857
 BoxCollider:
@@ -2902,8 +2920,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
+        type: 3}
+      propertyPath: assignedPlace
+      value: 
+      objectReference: {fileID: 1059411552}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6501071031534e67adaa60c2694a7d5, type: 3}
+--- !u!114 &1620370652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1620370651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5092f3a2c5d04f81b9b78318bf7a02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639920609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,5 +3252,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
+        type: 3}
+      propertyPath: assignedPlace
+      value: 
+      objectReference: {fileID: 1194315603}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6501071031534e67adaa60c2694a7d5, type: 3}
+--- !u!114 &8943724233666869648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8943724233666869647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5092f3a2c5d04f81b9b78318bf7a02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
