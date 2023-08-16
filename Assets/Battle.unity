@@ -2422,6 +2422,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089e22bb76df142b4b20ae3be8cb1210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCardPoints:
+  - {fileID: 749118304}
+  - {fileID: 858989050}
+  - {fileID: 852055191}
+  - {fileID: 736935669}
+  - {fileID: 134473227}
+  enemyCardPoints:
+  - {fileID: 29026226}
+  - {fileID: 1398725856}
+  - {fileID: 1194315603}
+  - {fileID: 1059411552}
+  - {fileID: 42600340}
 --- !u!4 &1214933100
 Transform:
   m_ObjectHideFlags: 0
