@@ -41,8 +41,7 @@ public class CardPointsController : MonoBehaviour
             {
                 if (opponentCardPoints[i].activeCard != null)
                 {
-                    Debug.Log("Attack " + i);
-                    //attack enemy card
+                    opponentCardPoints[i].activeCard.DamageCard(playerCardPoints[i].activeCard.attackPower);
                 }
                 else
                 {

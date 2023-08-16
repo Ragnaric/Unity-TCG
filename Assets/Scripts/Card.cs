@@ -192,4 +192,15 @@ public class Card : MonoBehaviour
         theCol.enabled = true;
         MoveToPoint(theHC.cardPositions[handPosition]);
     }
+
+    public void DamageCard(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            assignedPlace.activeCard = null;
+            Destroy(gameObject);
+        }
+    }
 }
