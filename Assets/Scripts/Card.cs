@@ -53,9 +53,10 @@ public class Card : MonoBehaviour
         currentHealth = cardSO.currentHealth;
         manaCost = cardSO.manaCost;
 
-        attackText.text = attackPower.ToString();
-        defText.text = currentHealth.ToString();
-        manaText.text = manaCost.ToString();
+        // attackText.text = attackPower.ToString();
+        // defText.text = currentHealth.ToString();
+        // manaText.text = manaCost.ToString();
+        UpdateCardDisplay();
 
         cardName.text = cardSO.cardName;
         descriptionText.text = cardSO.descriptionText;
@@ -202,5 +203,13 @@ public class Card : MonoBehaviour
             assignedPlace.activeCard = null;
             Destroy(gameObject);
         }
+        UpdateCardDisplay();
+    }
+
+    public void UpdateCardDisplay()
+    {
+        attackText.text = attackPower.ToString();
+        defText.text = currentHealth.ToString();
+        manaText.text = manaCost.ToString();
     }
 }
