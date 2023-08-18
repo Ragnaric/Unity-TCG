@@ -42,6 +42,7 @@ public class CardPointsController : MonoBehaviour
                 if (opponentCardPoints[i].activeCard != null)
                 {
                     opponentCardPoints[i].activeCard.DamageCard(playerCardPoints[i].activeCard.attackPower);
+                    playerCardPoints[i].activeCard.DamageCard(opponentCardPoints[i].activeCard.attackPower);
                 }
                 else
                 {
