@@ -202,6 +202,8 @@ public class Card : MonoBehaviour
             currentHealth = 0;
             assignedPlace.activeCard = null;
             MoveToPoint(BattleController.instance.discardPoint.position);
+            this.StartFlip();
+            this.FlipCard();
             Destroy(gameObject, 3f);
         }
         UpdateCardDisplay();
