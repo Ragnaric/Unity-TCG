@@ -20,6 +20,8 @@ public class BattleController : MonoBehaviour
     public enum TurnOrder { playerMainPhase, playerAttackPhase, enemyMainPhase, enemyAttackPhase }
     public TurnOrder currentPhase;
 
+    public Transform discardPoint;
+
     // Start is called before the first frame update
     void Start()
     {

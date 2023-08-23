@@ -201,7 +201,8 @@ public class Card : MonoBehaviour
         {
             currentHealth = 0;
             assignedPlace.activeCard = null;
-            Destroy(gameObject);
+            MoveToPoint(BattleController.instance.discardPoint.position);
+            Destroy(gameObject, 3f);
         }
         UpdateCardDisplay();
     }
