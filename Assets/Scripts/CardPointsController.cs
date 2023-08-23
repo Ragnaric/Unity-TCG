@@ -56,6 +56,32 @@ public class CardPointsController : MonoBehaviour
                 yield return new WaitForSeconds(attackDelay);
             }
         }
+        CheckAssignedCards();
         BattleController.instance.AdvanceTurn();
+    }
+
+    public void CheckAssignedCards()
+    {
+        foreach(CardPlacePoint point in opponentCardPoints)
+        {
+            if (point.activeCard != null)
+            {
+                if (point.activeCard.currentHealth <= 0)
+                {
+                    point.activeCard = null;
+                }
+            }
+        }
+
+        foreach(CardPlacePoint point in playerCardPoints)
+        {
+            if (point.activeCard != null)
+            {
+                if (point.activeCard.currentHealth <= 0)
+                {
+                    point.activeCard = null;
+                }
+            }
+        }
     }
 }
