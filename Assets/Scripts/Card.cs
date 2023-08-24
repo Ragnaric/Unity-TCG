@@ -34,6 +34,8 @@ public class Card : MonoBehaviour
 
     public CardPlacePoint assignedPlace;
 
+    public Animator animate;
+
     // Start is called before the first frame update
     void Start()
     {

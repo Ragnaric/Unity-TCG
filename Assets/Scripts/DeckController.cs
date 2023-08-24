@@ -47,6 +47,7 @@ public class DeckController : MonoBehaviour
 
     public void DrawCard()
     {
+        Debug.Log("Remaining cards: " + activeCards.Count);
         if (activeCards.Count == 0)
         {
             SetupDeck();
