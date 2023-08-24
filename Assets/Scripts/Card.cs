@@ -198,12 +198,14 @@ public class Card : MonoBehaviour
 
     public void DamageCard(int amount)
     {
+        animate.SetTrigger("Damage");
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             assignedPlace.activeCard = null;
             MoveToPoint(BattleController.instance.discardPoint.position);
+            animate.SetTrigger("Jump");
             this.StartFlip();
             this.FlipCard();
             Destroy(gameObject, 3f);
