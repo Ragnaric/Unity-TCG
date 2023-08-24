@@ -61,6 +61,41 @@ public class CardPointsController : MonoBehaviour
         BattleController.instance.AdvanceTurn();
     }
 
+    public void OpponentAttack()
+    {
+        StartCoroutine(opponentAttackCoroutine());
+    }
+
+    IEnumerator opponentAttackCoroutine()
+    {
+        yield return new WaitForSeconds(attackDelay);
+
+        for (int i = 0; i < opponentCardPoints.Length; i++)
+        {
+            if (opponentCardPoints[i].activeCard != null)
+            {
+                int opponentATK = opponentCardPoints[i].activeCard.attackPower;
+                opponentCardPoints[i].activeCard.animate.SetTrigger("Attack");
+
+                if (playerCardPoints[i].activeCard != null)
+                {
+                    int playerATK = playerCardPoints[i].activeCard.attackPower;
+                    playerCardPoints[i].activeCard.animate.SetTrigger("Damage");
+                    playerCardPoints[i].activeCard.DamageCard(opponentATK);
+                    opponentCardPoints[i].activeCard.DamageCard(playerATK);
+                }
+                else
+                {
+                    Debug.Log("Direct Attack");
+                    //attack player health points
+                }
+                yield return new WaitForSeconds(attackDelay);
+            }
+        }
+        CheckAssignedCards();
+        BattleController.instance.AdvanceTurn();
+    }
+
     public void CheckAssignedCards()
     {
         foreach(CardPlacePoint point in opponentCardPoints)

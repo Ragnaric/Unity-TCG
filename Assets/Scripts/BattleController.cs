@@ -97,6 +97,7 @@ public class BattleController : MonoBehaviour
 
             case TurnOrder.enemyAttackPhase:
                 Debug.Log(currentPhase);
+                CardPointsController.instance.OpponentAttack();
                 break;
         }
     }
