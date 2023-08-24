@@ -22,6 +22,8 @@ public class BattleController : MonoBehaviour
 
     public Transform discardPoint;
 
+    public int playerLifePoints;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +101,14 @@ public class BattleController : MonoBehaviour
                 Debug.Log(currentPhase);
                 CardPointsController.instance.OpponentAttack();
                 break;
+        }
+    }
+
+    public void DamageLifePoints(int amount)
+    {
+        if (playerLifePoints > 0)
+        {
+            playerLifePoints -= amount;
         }
     }
 }
