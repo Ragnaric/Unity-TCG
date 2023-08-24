@@ -75,7 +75,7 @@ public class CardPointsController : MonoBehaviour
             if (opponentCardPoints[i].activeCard != null)
             {
                 int opponentATK = opponentCardPoints[i].activeCard.attackPower;
-                opponentCardPoints[i].activeCard.animate.SetTrigger("Attack");
+                opponentCardPoints[i].activeCard.animate.SetTrigger("Opponent Attack");
 
                 if (playerCardPoints[i].activeCard != null)
                 {
