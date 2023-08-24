@@ -40,11 +40,12 @@ public class CardPointsController : MonoBehaviour
             if (playerCardPoints[i].activeCard != null)
             {
                 int playerATK = playerCardPoints[i].activeCard.attackPower;
+                playerCardPoints[i].activeCard.animate.SetTrigger("Attack");
 
                 if (opponentCardPoints[i].activeCard != null)
                 {
                     int opponentATK = opponentCardPoints[i].activeCard.attackPower;
-                    playerCardPoints[i].activeCard.animate.SetTrigger("Attack");
+                    opponentCardPoints[i].activeCard.animate.SetTrigger("Damage");
                     opponentCardPoints[i].activeCard.DamageCard(playerATK);
                     playerCardPoints[i].activeCard.DamageCard(opponentATK);
                 }
