@@ -5,11 +5,19 @@ using TMPro;
 
 public class UIDamageIndicator : MonoBehaviour
 {
+    public static UIDamageIndicator instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public TMP_Text damageTaken;
 
     public float moveSpeed, displayTime = 3f;
 
     private RectTransform canvas;
+
     // Start is called before the first frame update
     void Start()
     {

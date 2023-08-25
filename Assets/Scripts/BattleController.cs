@@ -129,6 +129,9 @@ public class BattleController : MonoBehaviour
             }
         }
         UpdatePlayerLife();
+        UIDamageIndicator damageClone = Instantiate(UIController.instance.playerDamage, UIController.instance.playerDamage.transform.parent);
+        damageClone.damageTaken.text = (amount * -1).ToString();
+        damageClone.gameObject.SetActive(true);
     }
 
     public void DamageOpponentLifePoints(int amount)
@@ -143,5 +146,8 @@ public class BattleController : MonoBehaviour
             }
         }
         UpdateOpponentLife();
+        UIDamageIndicator damageClone = Instantiate(UIController.instance.opponentDamage, UIController.instance.opponentDamage.transform.parent);
+        damageClone.damageTaken.text = (amount * -1).ToString();
+        damageClone.gameObject.SetActive(true);
     }
 }
