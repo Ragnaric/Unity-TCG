@@ -22,14 +22,15 @@ public class BattleController : MonoBehaviour
 
     public Transform discardPoint;
 
-    public int playerLifePoints;
-    public int opponentLifePoints;
+    public int playerLifePoints = 20;
+    public int opponentLifePoints = 20;
 
     // Start is called before the first frame update
     void Start()
     {
         UIController.instance.SetTurnText(turn);
         updateMana();
+        UpdatePlayerLife();
         DeckController.instance.StartFirstDraw(startingCards);
     }
 
@@ -69,6 +70,11 @@ public class BattleController : MonoBehaviour
             playerMana = maxMana;
             UIController.instance.SetPlayerManaText(playerMana);
         }
+    }
+
+    public void UpdatePlayerLife()
+    {
+        UIController.instance.SetPlayerLifeText(playerLifePoints);
     }
 
     public void AdvanceTurn()
@@ -116,6 +122,7 @@ public class BattleController : MonoBehaviour
                 //End battle
             }
         }
+        UpdatePlayerLife();
     }
 
     public void DamageOpponentLifePoints(int amount)
