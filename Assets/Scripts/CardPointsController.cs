@@ -51,8 +51,7 @@ public class CardPointsController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Direct Attack");
-                    //attack enemy health points
+                    BattleController.instance.DamageOpponentLifePoints(playerATK);
                 }
                 yield return new WaitForSeconds(attackDelay);
             }
@@ -86,8 +85,7 @@ public class CardPointsController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Direct Attack");
-                    //attack player health points
+                    BattleController.instance.DamageLifePoints(opponentATK);
                 }
                 yield return new WaitForSeconds(attackDelay);
             }

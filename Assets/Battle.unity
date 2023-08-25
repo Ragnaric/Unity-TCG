@@ -1980,6 +1980,8 @@ MonoBehaviour:
   startingCards: 5
   currentPhase: 0
   discardPoint: {fileID: 1879446671}
+  playerLifePoints: 20
+  opponentLifePoints: 20
 --- !u!4 &986793651
 Transform:
   m_ObjectHideFlags: 0

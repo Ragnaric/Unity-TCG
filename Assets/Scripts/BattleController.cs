@@ -23,6 +23,7 @@ public class BattleController : MonoBehaviour
     public Transform discardPoint;
 
     public int playerLifePoints;
+    public int opponentLifePoints;
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +110,24 @@ public class BattleController : MonoBehaviour
         if (playerLifePoints > 0)
         {
             playerLifePoints -= amount;
+            if (playerLifePoints <= 0)
+            {
+                playerLifePoints = 0;
+                //End battle
+            }
+        }
+    }
+
+    public void DamageOpponentLifePoints(int amount)
+    {
+        if (opponentLifePoints > 0)
+        {
+            opponentLifePoints -= amount;
+            if (opponentLifePoints < 0)
+            {
+                opponentLifePoints = 0;
+                //End battle
+            }
         }
     }
 }
