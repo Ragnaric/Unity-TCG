@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     public TMP_Text playerManaText;
     public TMP_Text turnNumber;
     public TMP_Text playerLifeTotal;
+    public TMP_Text opponentLifeTotal;
 
     public GameObject manaWarning, endTurnButton;
 
@@ -52,6 +53,11 @@ public class UIController : MonoBehaviour
     public void SetPlayerLifeText(int amount)
     {
         playerLifeTotal.text = amount.ToString();
+    }
+
+    public void SetOpponentLifeText(int amount)
+    {
+        opponentLifeTotal.text = amount.ToString();
     }
 
     public void ShowManaWarning()

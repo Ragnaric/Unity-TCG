@@ -31,6 +31,7 @@ public class BattleController : MonoBehaviour
         UIController.instance.SetTurnText(turn);
         updateMana();
         UpdatePlayerLife();
+        UpdateOpponentLife();
         DeckController.instance.StartFirstDraw(startingCards);
     }
 
@@ -75,6 +76,11 @@ public class BattleController : MonoBehaviour
     public void UpdatePlayerLife()
     {
         UIController.instance.SetPlayerLifeText(playerLifePoints);
+    }
+
+    public void UpdateOpponentLife()
+    {
+        UIController.instance.SetOpponentLifeText(opponentLifePoints);
     }
 
     public void AdvanceTurn()
@@ -136,5 +142,6 @@ public class BattleController : MonoBehaviour
                 //End battle
             }
         }
+        UpdateOpponentLife();
     }
 }
