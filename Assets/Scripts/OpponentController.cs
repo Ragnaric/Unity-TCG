@@ -14,6 +14,9 @@ public class OpponentController : MonoBehaviour
     public List<CardScriptableObject> opponentDeck = new List<CardScriptableObject>();
     private List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
 
+    public Card cardSpawn;
+    public Transform cardSpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
