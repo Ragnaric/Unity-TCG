@@ -107,7 +107,7 @@ public class BattleController : MonoBehaviour
                 break;
 
             case TurnOrder.enemyMainPhase:
-                OpponentController.instance.StartAction();
+                OpponentController.instance.StartOpponentTurn();
                 break;
 
             case TurnOrder.enemyAttackPhase:

@@ -39,8 +39,19 @@ public class OpponentController : MonoBehaviour
         }
     }
 
-    public void StartAction()
+    public void StartOpponentTurn()
     {
-        Debug.Log("Opponent is playing cards");
+        StartCoroutine(OpponentTurn());
+    }
+
+    IEnumerator OpponentTurn()
+    {
+        if (activeCards.Count == 0)
+        {
+            SetupDeck();
+        }
+        yield return new WaitForSeconds(1f);
+
+        BattleController.instance.AdvanceTurn();
     }
 }
