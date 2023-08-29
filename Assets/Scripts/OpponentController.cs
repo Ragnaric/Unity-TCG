@@ -55,6 +55,28 @@ public class OpponentController : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
 
+        List<CardPlacePoint> cardPoints = new List<CardPlacePoint>();
+        cardPoints.AddRange(CardPointsController.instance.opponentCardPoints);
+
+        int randomPoint = Random.Range(0, cardPoints.Count);
+        CardPlacePoint selectedPoint = cardPoints[randomPoint];
+        while (selectedPoint.activeCard != null && cardPoints.Count > 0)
+        {
+            randomPoint = Random.Range(0, cardPoints.Count);
+            selectedPoint = cardPoints[randomPoint];
+            cardPoints.RemoveAt(randomPoint);
+        }
+        if (selectedPoint.activeCard == null)
+        {
+            Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
+            newCard.cardSO = activeCards[0];
+            activeCards.RemoveAt(0);
+            newCard.SetupCard();
+            newCard.MoveToPoint(selectedPoint.transform.position);
+            selectedPoint.activeCard = newCard;
+            newCard.assignedPlace = selectedPoint;
+        }
+
         BattleController.instance.AdvanceTurn();
     }
 }
