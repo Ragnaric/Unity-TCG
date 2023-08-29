@@ -53,7 +53,7 @@ public class HandController : MonoBehaviour
             {
                 float middlePoint = (heldCards.Count / 2) - 0.5f;
                 cardPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
-                heldCards[i].MoveToPoint(cardPositions[i]);
+                heldCards[i].MoveToPoint(cardPositions[i], Quaternion.identity);
                 heldCards[i].inHand = true;
                 heldCards[i].handPosition = i;
             }
@@ -61,7 +61,7 @@ public class HandController : MonoBehaviour
             {
                 float middlePoint = heldCards.Count / 2;
                 cardPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
-                heldCards[i].MoveToPoint(cardPositions[i]);
+                heldCards[i].MoveToPoint(cardPositions[i], Quaternion.identity);
                 heldCards[i].inHand = true;
                 heldCards[i].handPosition = i;
             }
@@ -83,7 +83,7 @@ public class HandController : MonoBehaviour
         for (int i = 0; i < heldCards.Count; i++)
         {
             cardPositions.Add(minPos.position + (distanceBetweenCards * i + Vector3.up * (i * 0.005f)) + Vector3.forward);
-            heldCards[i].MoveToPoint(cardPositions[i]);
+            heldCards[i].MoveToPoint(cardPositions[i], Quaternion.identity);
         }
     }
 

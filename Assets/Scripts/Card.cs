@@ -17,7 +17,8 @@ public class Card : MonoBehaviour
     public Image characterArt, bgArt;
 
     private Vector3 targetPoint;
-    public float moveSpeed = 2f;
+    private Quaternion targetRotation;
+    public float moveSpeed = 2f, rotateSpeed = 540f;
 
     public bool inHand;
     public int handPosition;
@@ -72,6 +73,7 @@ public class Card : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         if (isSelected)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -80,7 +82,7 @@ public class Card : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, desktopLayer))
             Debug.Log(hit.point);
             {
-                MoveToPoint(hit.point + new Vector3(0f, 2f, 0.5f));
+                MoveToPoint(hit.point + new Vector3(0f, 2f, 0.5f), Quaternion.identity);
             }
 
             if (Input.GetMouseButtonDown(1))
@@ -101,7 +103,7 @@ public class Card : MonoBehaviour
                             selectedPoint.activeCard = this;
                             assignedPlace = selectedPoint;
 
-                            MoveToPoint(selectedPoint.transform.position);
+                            MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
 
                             inHand = false;
                             isSelected = false;
@@ -132,10 +134,10 @@ public class Card : MonoBehaviour
         // }
     }
 
-    public void MoveToPoint(Vector3 destinationPoint)
+    public void MoveToPoint(Vector3 destinationPoint, Quaternion intendedRotation)
     {
         targetPoint = destinationPoint;
-
+        targetRotation = intendedRotation;
     }
 
     public void StartFlip()
@@ -167,7 +169,7 @@ public class Card : MonoBehaviour
         float shiftAxisX = currentPosition.x / center;
         if (inHand && isPlayer)
         {
-            MoveToPoint(currentPosition + new Vector3(-shiftAxisX, 2f, 2.5f));
+            MoveToPoint(currentPosition + new Vector3(-shiftAxisX, 2f, 2.5f), Quaternion.identity);
         }
     }
 
@@ -175,7 +177,7 @@ public class Card : MonoBehaviour
     {
         if (inHand && isPlayer)
         {
-            MoveToPoint(theHC.cardPositions[handPosition]);
+            MoveToPoint(theHC.cardPositions[handPosition], Quaternion.identity);
         }
     }
 
@@ -193,7 +195,7 @@ public class Card : MonoBehaviour
     {
         isSelected = false;
         theCol.enabled = true;
-        MoveToPoint(theHC.cardPositions[handPosition]);
+        MoveToPoint(theHC.cardPositions[handPosition], Quaternion.identity);
     }
 
     public void DamageCard(int amount)
@@ -204,7 +206,7 @@ public class Card : MonoBehaviour
             currentHealth = 0;
             assignedPlace.activeCard = null;
             animate.SetTrigger("Jump");
-            MoveToPoint(BattleController.instance.discardPoint.position);
+            MoveToPoint(BattleController.instance.discardPoint.position, BattleController.instance.discardPoint.rotation);
             this.StartFlip();
             this.FlipCard();
             Destroy(gameObject, 3f);
