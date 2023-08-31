@@ -77,6 +77,8 @@ public class OpponentController : MonoBehaviour
             newCard.assignedPlace = selectedPoint;
         }
 
+        yield return new WaitForSeconds(1f);
+
         BattleController.instance.AdvanceTurn();
     }
 }
