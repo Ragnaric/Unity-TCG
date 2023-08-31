@@ -140,6 +140,7 @@ public class Card : MonoBehaviour
         targetRotation = intendedRotation;
     }
 
+    //this coroutine seems to be obsolete after refactoring MoveToPoint to accept a rotation parameter
     public void StartFlip()
     {
         StartCoroutine(FlipCard());

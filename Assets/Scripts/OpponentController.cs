@@ -72,7 +72,7 @@ public class OpponentController : MonoBehaviour
             newCard.cardSO = activeCards[0];
             activeCards.RemoveAt(0);
             newCard.SetupCard();
-            newCard.MoveToPoint(selectedPoint.transform.position, selectedPoint.transform.rotation);
+            newCard.MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
             selectedPoint.activeCard = newCard;
             newCard.assignedPlace = selectedPoint;
         }
