@@ -69,15 +69,30 @@ public class OpponentController : MonoBehaviour
             selectedPoint = cardPoints[randomPoint];
             cardPoints.RemoveAt(randomPoint);
         }
-        if (selectedPoint.activeCard == null)
+
+        switch (opponentType)
         {
-            Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
-            newCard.cardSO = activeCards[0];
-            activeCards.RemoveAt(0);
-            newCard.SetupCard();
-            newCard.MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
-            selectedPoint.activeCard = newCard;
-            newCard.assignedPlace = selectedPoint;
+            case AIType.topDecking:
+                if (selectedPoint.activeCard == null)
+                {
+                    Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
+                    newCard.cardSO = activeCards[0];
+                    activeCards.RemoveAt(0);
+                    newCard.SetupCard();
+                    newCard.MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
+                    selectedPoint.activeCard = newCard;
+                    newCard.assignedPlace = selectedPoint;
+                }
+                break;
+
+            case AIType.noob:
+                break;
+
+            case AItype.defensive:
+                break;
+
+            case AItype.aggro:
+                break;
         }
 
         yield return new WaitForSeconds(1f);

@@ -92,7 +92,7 @@ public class BattleController : MonoBehaviour
             currentPhase = 0;
         }
 
-        switch(currentPhase)
+        switch (currentPhase)
         {
             case TurnOrder.playerMainPhase:
                 Debug.Log(currentPhase);
