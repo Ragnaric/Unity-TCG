@@ -17,6 +17,9 @@ public class OpponentController : MonoBehaviour
     public Card cardSpawn;
     public Transform cardSpawnPoint;
 
+    public Enum AItype { topDecking, noob, defensive, aggro }
+    public AItype opponentType;
+
     // Start is called before the first frame update
     void Start()
     {
