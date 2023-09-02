@@ -17,7 +17,7 @@ public class OpponentController : MonoBehaviour
     public Card cardSpawn;
     public Transform cardSpawnPoint;
 
-    public Enum AItype { topDecking, noob, defensive, aggro }
+    public enum AItype { topDecking, noob, defensive, aggro }
     public AItype opponentType;
 
     // Start is called before the first frame update
@@ -72,7 +72,7 @@ public class OpponentController : MonoBehaviour
 
         switch (opponentType)
         {
-            case AIType.topDecking:
+            case AItype.topDecking:
                 if (selectedPoint.activeCard == null)
                 {
                     Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
@@ -85,7 +85,7 @@ public class OpponentController : MonoBehaviour
                 }
                 break;
 
-            case AIType.noob:
+            case AItype.noob:
                 break;
 
             case AItype.defensive:
