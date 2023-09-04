@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaWarningTime: 2
   playerManaText: {fileID: 1656830546}
-  opponentManaText: {fileID: 0}
+  opponentManaText: {fileID: 2000204880}
   turnNumber: {fileID: 1567570721}
   playerLifeTotal: {fileID: 1708539688}
   opponentLifeTotal: {fileID: 787560541}
@@ -4093,8 +4093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 664.0082, y: 501}
-  m_SizeDelta: {x: 417.2308, y: 50}
+  m_AnchoredPosition: {x: 666.86084, y: 501}
+  m_SizeDelta: {x: 422.9361, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000204880
 MonoBehaviour:
@@ -4144,12 +4144,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 38
   m_fontStyle: 17
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 256

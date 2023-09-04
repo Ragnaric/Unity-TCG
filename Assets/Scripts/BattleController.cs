@@ -30,6 +30,7 @@ public class BattleController : MonoBehaviour
     {
         UIController.instance.SetTurnText(turn);
         updateMana();
+        updateOpponentMana();
         UpdatePlayerLife();
         UpdateOpponentLife();
         DeckController.instance.StartFirstDraw(startingCards);
