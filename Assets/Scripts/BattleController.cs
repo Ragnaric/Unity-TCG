@@ -12,7 +12,7 @@ public class BattleController : MonoBehaviour
     }
 
     public int initialMana = 3, maxMana = 12;
-    public int playerMana;
+    public int playerMana, opponentMana;
     public int turn = 1;
 
     public int startingCards = 5;
@@ -53,6 +53,16 @@ public class BattleController : MonoBehaviour
         UIController.instance.SetPlayerManaText(playerMana);
     }
 
+    public void spendOpponentMana(int amount)
+    {
+        opponentMana = opponentMana - amount;
+
+        if (opponentMana < 0)
+        {
+            opponentMana = 0;
+        }
+    }
+
     public void updateTurn()
     {
         turn += 1;
@@ -70,6 +80,15 @@ public class BattleController : MonoBehaviour
         {
             playerMana = maxMana;
             UIController.instance.SetPlayerManaText(playerMana);
+        }
+    }
+
+    public void updateOpponentMana()
+    {
+        if (initialMana + (turn - 1) < maxMana)
+        {
+            opponentMana = initialMana + (turn - 1);
+            UIController.instance.SetOpponentManaText(opponentMana);
         }
     }
 

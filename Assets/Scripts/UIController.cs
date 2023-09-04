@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
         instance = this;
     }
 
-    public TMP_Text playerManaText;
+    public TMP_Text playerManaText, opponentManaText;
     public TMP_Text turnNumber;
     public TMP_Text playerLifeTotal;
     public TMP_Text opponentLifeTotal;
@@ -45,6 +45,11 @@ public class UIController : MonoBehaviour
     public void SetPlayerManaText(int amount)
     {
         playerManaText.text = "Mana: " + amount;
+    }
+
+    public void SetOpponentManaText(int amount)
+    {
+        opponentManaText.text = "Mana: " + amount;
     }
 
     public void SetTurnText(int amount)
