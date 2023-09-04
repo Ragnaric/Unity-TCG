@@ -118,6 +118,7 @@ public class BattleController : MonoBehaviour
                 Debug.Log(currentPhase);
                 updateTurn();
                 updateMana();
+                updateOpponentMana();
                 DeckController.instance.DrawCard();
                 break;
 
@@ -128,7 +129,6 @@ public class BattleController : MonoBehaviour
 
             case TurnOrder.enemyMainPhase:
                 OpponentController.instance.StartOpponentTurn();
-                updateOpponentMana();
                 break;
 
             case TurnOrder.enemyAttackPhase:
