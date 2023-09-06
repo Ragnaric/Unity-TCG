@@ -34,6 +34,7 @@ public class BattleController : MonoBehaviour
         UpdatePlayerLife();
         UpdateOpponentLife();
         DeckController.instance.StartFirstDraw(startingCards);
+        OpponentController.instance.StartFirstDraw(startingCards);
     }
 
     // Update is called once per frame

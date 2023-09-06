@@ -113,4 +113,19 @@ public class OpponentController : MonoBehaviour
 
         BattleController.instance.AdvanceTurn();
     }
+
+    public void StartFirstDraw(int amount)
+    {
+        StartCoroutine(FirstDraw(amount));
+    }
+
+    IEnumerator FirstDraw(int amount)
+    {
+        while (amount != 0)
+        {
+            OpponentDraw();
+            amount--;
+            yield return new WaitForSeconds(.3f);
+        }
+    }
 }
