@@ -69,11 +69,12 @@ public class HandController : MonoBehaviour
                 heldCards[i].handPosition = i;
             }
         }
+    }
 
-        public void SetOpponentHand()
-        {
-
-        }
+    public void SetOpponentHand()
+    {
+        opponentPositions.Clear();
+        Vector3 center = new Vector3((maxPos2.position.x + minPos2.position.x), maxPos2.position.y, maxPos2.position.z);
     }
 
     //this feature not working as intended, will get back to it later
