@@ -12,8 +12,11 @@ public class HandController : MonoBehaviour
     }
 
     public List<Card> heldCards = new List<Card>();
+    public List<Card> opponentCards = new List<Card>();
     public Transform minPos, maxPos;
+    public Transform minPos2, maxPos2;
     public List<Vector3> cardPositions = new List<Vector3>();
+    public List<Vector3> opponentPositions = new List<Vector3>();
 
     public LayerMask desktopLayer;
     public LayerMask handLayer;
@@ -65,6 +68,11 @@ public class HandController : MonoBehaviour
                 heldCards[i].inHand = true;
                 heldCards[i].handPosition = i;
             }
+        }
+
+        public void SetOpponentHand()
+        {
+
         }
     }
 
