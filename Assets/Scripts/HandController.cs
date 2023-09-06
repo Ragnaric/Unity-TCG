@@ -84,7 +84,7 @@ public class HandController : MonoBehaviour
                 float middlePoint = (opponentCards.Count / 2) - 0.5f;
                 opponentPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
                 opponentCards[i].MoveToPoint(opponentPositions[i], minPos2.rotation);
-                opponentCards[i].inHand = true;
+                //opponentCards[i].inHand = true;
                 opponentCards[i].handPosition = i;
             }
             else
@@ -92,7 +92,7 @@ public class HandController : MonoBehaviour
                 float middlePoint = opponentCards.Count / 2;
                 opponentPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
                 opponentCards[i].MoveToPoint(opponentPositions[i], minPos2.rotation);
-                opponentCards[i].inHand = true;
+                //opponentCards[i].inHand = true;
                 opponentCards[i].handPosition = i;
             }
         }
