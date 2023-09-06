@@ -75,6 +75,27 @@ public class HandController : MonoBehaviour
     {
         opponentPositions.Clear();
         Vector3 center = new Vector3((maxPos2.position.x + minPos2.position.x), maxPos2.position.y, maxPos2.position.z);
+
+        Vector3 shiftDistance = Vector3.left * 0.75f;
+        for (int i = 0; i < opponentCards.Count; i++)
+        {
+            if (opponentCards.Count % 2 == 0)
+            {
+                float middlePoint = (opponentCards.Count / 2) - 0.5f;
+                opponentPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
+                opponentCards[i].MoveToPoint(opponentPositions[i], minPos2.rotation);
+                opponentCards[i].inHand = true;
+                opponentCards[i].handPosition = i;
+            }
+            else
+            {
+                float middlePoint = opponentCards.Count / 2;
+                opponentPositions.Add(center + (shiftDistance * (middlePoint - i) + Vector3.up * (i * 0.005f)));
+                opponentCards[i].MoveToPoint(opponentPositions[i], minPos2.rotation);
+                opponentCards[i].inHand = true;
+                opponentCards[i].handPosition = i;
+            }
+        }
     }
 
     //this feature not working as intended, will get back to it later
@@ -112,6 +133,12 @@ public class HandController : MonoBehaviour
     {
         heldCards.Add(cardToAdd);
         SetCardPositionsHand();
+    }
+
+    public void AddOpponentHand(Card cardToAdd)
+    {
+        opponentCards.Add(cardToAdd);
+        SetOpponentHand();
     }
 
     // public void MoveHandController(Vector3 destination)

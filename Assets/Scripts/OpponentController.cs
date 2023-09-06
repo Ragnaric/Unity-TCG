@@ -52,7 +52,10 @@ public class OpponentController : MonoBehaviour
             SetupDeck();
         }
         Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
-        newCard.MoveToPoint(HandController.instance.minPos2.position, HandController.instance.minPos2.rotation);
+        newCard.cardSO = activeCards[0];
+        activeCards.RemoveAt(0);
+        // newCard.MoveToPoint(HandController.instance.minPos2.position, /*HandController.instance.minPos2.rotation*/ Quaternion.identity);
+        HandController.instance.AddOpponentHand(newCard);
     }
 
     public void StartOpponentTurn()
