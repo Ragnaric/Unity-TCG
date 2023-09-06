@@ -45,6 +45,16 @@ public class OpponentController : MonoBehaviour
         }
     }
 
+    public void OpponentDraw()
+    {
+        if (activeCards.Count == 0)
+        {
+            SetupDeck();
+        }
+        Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
+        newCard.MoveToPoint(HandController.instance.minPos2.position, HandController.instance.minPos2.rotation);
+    }
+
     public void StartOpponentTurn()
     {
         StartCoroutine(OpponentTurn());
@@ -73,16 +83,17 @@ public class OpponentController : MonoBehaviour
         switch (opponentType)
         {
             case AItype.topDecking:
-                if (selectedPoint.activeCard == null)
-                {
-                    Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
-                    newCard.cardSO = activeCards[0];
-                    activeCards.RemoveAt(0);
-                    newCard.SetupCard();
-                    newCard.MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
-                    selectedPoint.activeCard = newCard;
-                    newCard.assignedPlace = selectedPoint;
-                }
+            OpponentDraw();
+                // if (selectedPoint.activeCard == null)
+                // {
+                //     Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
+                //     newCard.cardSO = activeCards[0];
+                //     activeCards.RemoveAt(0);
+                //     newCard.SetupCard();
+                //     newCard.MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
+                //     selectedPoint.activeCard = newCard;
+                //     newCard.assignedPlace = selectedPoint;
+                // }
                 break;
 
             case AItype.noob:
