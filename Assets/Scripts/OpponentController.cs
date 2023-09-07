@@ -17,7 +17,7 @@ public class OpponentController : MonoBehaviour
     public Card cardSpawn;
     public Transform cardSpawnPoint;
 
-    public enum AItype { topDecking, noob, defensive, aggro }
+    public enum AItype { noob, defensive, aggro }
     public AItype opponentType;
 
     // Start is called before the first frame update
@@ -64,6 +64,7 @@ public class OpponentController : MonoBehaviour
 
     IEnumerator OpponentTurn()
     {
+        Debug.Log("opponent type: " + opponentType);
         if (activeCards.Count == 0)
         {
             SetupDeck();
@@ -86,7 +87,7 @@ public class OpponentController : MonoBehaviour
 
         switch (opponentType)
         {
-            case AItype.topDecking:
+            case AItype.noob:
                 OpponentDraw();
                 yield return new WaitForSeconds(.75f);
 
@@ -108,8 +109,8 @@ public class OpponentController : MonoBehaviour
                 }
                 break;
 
-            case AItype.noob:
-                break;
+            // case AItype.noob:
+            //     break;
 
             case AItype.defensive:
                 break;
@@ -136,5 +137,10 @@ public class OpponentController : MonoBehaviour
             amount--;
             yield return new WaitForSeconds(.3f);
         }
+    }
+
+    public void switchAI()
+    {
+        opponentType++;
     }
 }
