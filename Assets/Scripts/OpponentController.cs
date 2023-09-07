@@ -101,9 +101,10 @@ public class OpponentController : MonoBehaviour
                         selectedPoint.activeCard = opponentCards[i];
                         opponentCards[i].assignedPlace = selectedPoint;
                         BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
+                        opponentCards.RemoveAt(i);
                         }
+                        break;
                     }
-
                 }
                 break;
 
