@@ -63,6 +63,8 @@ public class BattleController : MonoBehaviour
         {
             opponentMana = 0;
         }
+
+        UIController.instance.SetOpponentManaText(opponentMana);
     }
 
     public void updateTurn()

@@ -82,20 +82,29 @@ public class OpponentController : MonoBehaviour
             cardPoints.RemoveAt(randomPoint);
         }
 
+        List<Card> opponentCards = HandController.instance.opponentCards;
+
         switch (opponentType)
         {
             case AItype.topDecking:
-            OpponentDraw();
-                // if (selectedPoint.activeCard == null)
-                // {
-                //     Card newCard = Instantiate(cardSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);
-                //     newCard.cardSO = activeCards[0];
-                //     activeCards.RemoveAt(0);
-                //     newCard.SetupCard();
-                //     newCard.MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
-                //     selectedPoint.activeCard = newCard;
-                //     newCard.assignedPlace = selectedPoint;
-                // }
+                OpponentDraw();
+                yield return new WaitForSeconds(.75f);
+
+                for (int i = 0; i < opponentCards.Count; i++)
+                {
+                    Debug.Log("this is the mana cost: " + opponentCards[i].manaCost);
+                    if (opponentCards[i].manaCost <= BattleController.instance.opponentMana)
+                    {
+                        if (selectedPoint.activeCard == null)
+                        {
+                        opponentCards[i].MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
+                        selectedPoint.activeCard = opponentCards[i];
+                        opponentCards[i].assignedPlace = selectedPoint;
+                        BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
+                        }
+                    }
+
+                }
                 break;
 
             case AItype.noob:

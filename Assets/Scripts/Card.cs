@@ -56,9 +56,6 @@ public class Card : MonoBehaviour
         currentHealth = cardSO.currentHealth;
         manaCost = cardSO.manaCost;
 
-        // attackText.text = attackPower.ToString();
-        // defText.text = currentHealth.ToString();
-        // manaText.text = manaCost.ToString();
         UpdateCardDisplay();
 
         cardName.text = cardSO.cardName;
