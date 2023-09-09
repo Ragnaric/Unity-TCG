@@ -120,11 +120,21 @@ public class HandController : MonoBehaviour
         if (heldCards[cardToRemove.handPosition] == cardToRemove)
         {
             heldCards.RemoveAt(cardToRemove.handPosition);
-        } else
+        }
+        else
         {
             Debug.LogError("Card at position " + cardToRemove.handPosition + " is not the card being removed from hand");
         }
         SetCardPositionsHand();
+    }
+
+    public void RemoveOpponentHand(Card cardToRemove)
+    {
+        if (opponentCards[cardToRemove.handPosition] == cardToRemove)
+        {
+            opponentCards.RemoveAt(cardToRemove.handPosition);
+        }
+        SetOpponentHand();
     }
 
     public void AddCardHand(Card cardToAdd)

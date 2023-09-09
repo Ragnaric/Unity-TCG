@@ -91,11 +91,6 @@ public class OpponentController : MonoBehaviour
             }
         }
 
-        if (opponentType == AItype.multiple)
-        {
-
-        }
-
         switch (opponentType)
         {
             case AItype.single:
@@ -135,8 +130,7 @@ public class OpponentController : MonoBehaviour
                         opponentCards[i].assignedPlace = cardPoints[i];
                         BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
                         opponentCards.RemoveAt(i);
-                    //otherwise
-                        //skip over the current card
+                        HandController.instance.SetOpponentHand();
                 }
                 break;
 
