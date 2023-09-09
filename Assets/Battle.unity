@@ -2483,7 +2483,7 @@ MonoBehaviour:
   cardSpawn: {fileID: 6541331802976958157, guid: f6501071031534e67adaa60c2694a7d5,
     type: 3}
   cardSpawnPoint: {fileID: 300204375}
-  opponentType: 0
+  opponentType: 1
 --- !u!4 &1048456133
 Transform:
   m_ObjectHideFlags: 0

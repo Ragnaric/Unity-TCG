@@ -17,7 +17,7 @@ public class OpponentController : MonoBehaviour
     public Card cardSpawn;
     public Transform cardSpawnPoint;
 
-    public enum AItype { noob, defensive, aggro }
+    public enum AItype { single, multiple, defensive, aggro }
     public AItype opponentType;
 
     // Start is called before the first frame update
@@ -76,18 +76,24 @@ public class OpponentController : MonoBehaviour
 
         int randomPoint = Random.Range(0, cardPoints.Count);
         CardPlacePoint selectedPoint = cardPoints[randomPoint];
-        while (selectedPoint.activeCard != null && cardPoints.Count > 0)
-        {
-            randomPoint = Random.Range(0, cardPoints.Count);
-            selectedPoint = cardPoints[randomPoint];
-            cardPoints.RemoveAt(randomPoint);
-        }
 
         List<Card> opponentCards = HandController.instance.opponentCards;
 
+        if (opponentType == AItype.single)
+        {
+            cardPoints.RemoveAt(randomPoint);
+
+            while (selectedPoint.activeCard != null && cardPoints.Count > 0)
+            {
+                randomPoint = Random.Range(0, cardPoints.Count);
+                selectedPoint = cardPoints[randomPoint];
+                cardPoints.RemoveAt(randomPoint);
+            }
+        }
+
         switch (opponentType)
         {
-            case AItype.noob:
+            case AItype.single:
                 OpponentDraw();
                 yield return new WaitForSeconds(.75f);
 
@@ -109,8 +115,12 @@ public class OpponentController : MonoBehaviour
                 }
                 break;
 
-            // case AItype.noob:
-            //     break;
+            case AItype.multiple:
+                OpponentDraw();
+                yield return new WaitForSeconds(.75f);
+
+
+                break;
 
             case AItype.defensive:
                 break;
