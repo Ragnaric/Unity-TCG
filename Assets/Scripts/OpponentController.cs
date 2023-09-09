@@ -122,15 +122,24 @@ public class OpponentController : MonoBehaviour
                 //iterate through cards in hand
                 for (int i = 0; i < opponentCards.Count; i++)
                 {
-                    //if the mana cost allows
-                    if (opponentCards[i].manaCost <= BattleController.instance.opponentMana)
-                        //play the card
-                        opponentCards[i].MoveToPoint(cardPoints[i].transform.position, Quaternion.identity);
-                        cardPoints[i].activeCard = opponentCards[i];
-                        opponentCards[i].assignedPlace = cardPoints[i];
-                        BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
-                        opponentCards.RemoveAt(i);
-                        HandController.instance.SetOpponentHand();
+                    //iterate through the card points
+                    for (int j = 0; j < cardPoints.Count; j++)
+                    {
+                        //if the mana cost allows
+                        if (opponentCards[i].manaCost <= BattleController.instance.opponentMana)
+                        {
+                            //if there is a point available
+                            if (cardPoints[j].activeCard == null)
+                            {
+                                //play the card
+                                opponentCards[i].MoveToPoint(cardPoints[j].transform.position, Quaternion.identity);
+                                cardPoints[j].activeCard = opponentCards[i];
+                                opponentCards[i].assignedPlace = cardPoints[j];
+                                BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
+                                HandController.instance.RemoveOpponentHand(opponentCards[i]);
+                            }
+                        }
+                    }
                 }
                 break;
 
