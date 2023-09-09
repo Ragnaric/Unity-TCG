@@ -91,6 +91,11 @@ public class OpponentController : MonoBehaviour
             }
         }
 
+        if (opponentType == AItype.multiple)
+        {
+
+        }
+
         switch (opponentType)
         {
             case AItype.single:
@@ -119,7 +124,20 @@ public class OpponentController : MonoBehaviour
                 OpponentDraw();
                 yield return new WaitForSeconds(.75f);
 
-
+                //iterate through cards in hand
+                for (int i = 0; i < opponentCards.Count; i++)
+                {
+                    //if the mana cost allows
+                    if (opponentCards[i].manaCost <= BattleController.instance.opponentMana)
+                        //play the card
+                        opponentCards[i].MoveToPoint(cardPoints[i].transform.position, Quaternion.identity);
+                        cardPoints[i].activeCard = opponentCards[i];
+                        opponentCards[i].assignedPlace = cardPoints[i];
+                        BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
+                        opponentCards.RemoveAt(i);
+                    //otherwise
+                        //skip over the current card
+                }
                 break;
 
             case AItype.defensive:
