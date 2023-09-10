@@ -137,6 +137,7 @@ public class OpponentController : MonoBehaviour
                                 opponentCards[i].assignedPlace = cardPoints[j];
                                 BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
                                 HandController.instance.RemoveOpponentHand(opponentCards[i]);
+                                yield return new WaitForSeconds(1f);
                             }
                         }
                     }
