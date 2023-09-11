@@ -122,11 +122,11 @@ public class OpponentController : MonoBehaviour
                 //iterate through cards in hand
                 for (int i = 0; i < opponentCards.Count; i++)
                 {
-                    //iterate through the card points
-                    for (int j = 0; j < cardPoints.Count; j++)
+                    //if the mana cost allows
+                    if (opponentCards[i].manaCost <= BattleController.instance.opponentMana)
                     {
-                        //if the mana cost allows
-                        if (opponentCards[i].manaCost <= BattleController.instance.opponentMana)
+                        //iterate through the placement points
+                        for (int j = 0; j < cardPoints.Count; j++)
                         {
                             //if there is a point available
                             if (cardPoints[j].activeCard == null)
@@ -137,7 +137,9 @@ public class OpponentController : MonoBehaviour
                                 opponentCards[i].assignedPlace = cardPoints[j];
                                 BattleController.instance.spendOpponentMana(opponentCards[i].manaCost);
                                 HandController.instance.RemoveOpponentHand(opponentCards[i]);
+                                i--;
                                 yield return new WaitForSeconds(1f);
+                                break;
                             }
                         }
                     }
